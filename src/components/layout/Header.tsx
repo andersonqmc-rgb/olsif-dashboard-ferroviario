@@ -13,9 +13,9 @@ export function Header() {
 
       <nav aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
-        <a href="#painel">Painel</a>
+        <a href="#painel">Indicadores</a>
+        <a href="#comparacao">Comparação</a>
       </nav>
     </header>
   )
 }
-
