@@ -26,3 +26,16 @@ Sustentável e Inovação Ferroviária (OLSIF).
 - `npm run build`: verifica o TypeScript e gera a versão de publicação.
 - `npm run preview`: visualiza localmente a versão de publicação.
 
+## Projetos OLSIF
+
+### 1. Dashboard Ferroviário OLSIF
+Status: em desenvolvimento inicial.
+
+Objetivo: criar um painel demonstrativo para análise de logística ferroviária, intermodalidade e sustentabilidade.
+
+### Próximos projetos previstos
+
+- Simulador Intermodal
+- Calculadora de Emissões
+- Gêmeo Digital Ferroviário
+- Observatório de Corredores Bioceânicos
