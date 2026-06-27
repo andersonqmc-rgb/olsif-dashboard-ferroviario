@@ -1,4 +1,4 @@
-export function Header() {
+﻿export function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#inicio" aria-label="Página inicial do OLSIF">
@@ -7,14 +7,16 @@ export function Header() {
         </span>
         <span>
           <strong>OLSIF</strong>
-          <small>Dashboard Ferroviário</small>
+          <small>Painel de Inteligência Frugal</small>
         </span>
       </a>
 
       <nav aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#painel">Indicadores</a>
-        <a href="#comparacao">Comparação</a>
+        <a href="#estado">Estado</a>
+        <a href="#radar">Radar</a>
+        <a href="#cargas">Cargas</a>
+        <a href="#ictf">ICTF</a>
+        <a href="#fontes">Fontes</a>
       </nav>
     </header>
   )

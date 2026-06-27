@@ -1,4 +1,4 @@
-import type { Indicator } from '../../types/dashboard'
+﻿import type { Indicator } from '../../types/dashboard'
 
 type IndicatorCardProps = {
   indicator: Indicator

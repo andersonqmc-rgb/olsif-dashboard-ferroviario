@@ -1,4 +1,4 @@
-import type { Indicator, TransportComparison } from '../types/dashboard'
+﻿import type { Indicator, TransportComparison } from '../types/dashboard'
 
 // Valores fictícios criados somente para demonstrar o funcionamento do painel.
 export const indicators: Indicator[] = [
@@ -34,6 +34,6 @@ export const indicators: Indicator[] = [
 
 // Índice comparativo fictício de emissões: quanto menor, melhor.
 export const transportComparison: TransportComparison[] = [
-  { mode: 'Rodoviário', emissions: 100, color: '#bd7137' },
+  { mode: 'Rodoviário', emissions: 100, color: '#a65f32' },
   { mode: 'Ferroviário', emissions: 39, color: '#16715f' },
 ]

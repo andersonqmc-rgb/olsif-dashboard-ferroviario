@@ -1,11 +1,14 @@
-# Dashboard Ferroviário OLSIF
+﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.1 demonstrativa do Dashboard Ferroviário do Observatório de Logística
-Sustentável e Inovação Ferroviária (OLSIF).
+Versão 0.2 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
-O painel apresenta quatro indicadores e uma comparação ilustrativa entre os
-modais rodoviário e ferroviário. Todos os valores são fictícios e estão
-identificados como demonstrativos.
+A v0.2 transforma o MVP em um **Painel de Inteligência Frugal do OLSIF**. O objetivo é organizar informações preliminares sobre Malha Sul, Corredor Mercosul, AP ANTT nº 11/2026, cargas, fluxos, terminais, gargalos, fontes, extensão universitária e linha do tempo institucional.
+
+## Aviso sobre os dados
+
+Os dados desta versão são **mockados, preliminares, simulados ou curados manualmente para prototipagem**. Eles não representam diagnóstico final, base oficial consolidada nem posição institucional definitiva.
+
+A finalidade é demonstrar uma arquitetura simples para observar, organizar, validar fontes, mapear cargas e gargalos, acompanhar frentes estratégicas e preparar decisões futuras. O uso é exploratório e interno ao desenvolvimento do projeto.
 
 ## Como executar
 
@@ -19,17 +22,38 @@ identificados como demonstrativos.
 - `src/components`: peças visuais reutilizáveis.
 - `src/pages`: páginas completas da aplicação.
 - `src/features`: áreas reservadas para evoluções futuras.
-- `src/data`: dados demonstrativos locais.
+- `src/data`: dados demonstrativos, simulados e curados manualmente.
 - `src/services`: futura comunicação com APIs.
 - `src/styles`: estilos visuais compartilhados.
 - `src/types`: definições TypeScript usadas em mais de um arquivo.
 
-## Escopo da versão 0.1
+## Módulos da v0.2
 
-- Não utiliza mapas.
+- Estado do OLSIF.
+- Radar Estratégico.
+- Matriz de Cargas e Fluxos.
+- Gargalos do Corredor Mercosul.
+- ICTF — Capilaridade Terminal Ferroviária.
+- Fontes e Confiabilidade.
+- Extensão / Projeto 5740.
+- Linha do Tempo OLSIF.
+- Indicadores demonstrativos e comparação modal herdados da v0.1.
+
+## Escopo técnico
+
+- Não utiliza backend.
 - Não utiliza APIs externas.
+- Não faz scraping.
 - Não utiliza banco de dados.
-- Não utiliza dados reais ou institucionais privados.
+- Não utiliza dados sensíveis, senhas, tokens ou informações institucionais privadas.
+- Mantém dados iniciais em arquivos TypeScript locais.
+
+## Próximas versões previstas
+
+- v0.3: revisar dados mockados, separar módulos maiores em componentes próprios e melhorar navegação interna.
+- v0.4: iniciar gráficos com biblioteca dedicada, mantendo dados locais e auditáveis.
+- v0.5: estudar mapas e camadas territoriais com Leaflet, ainda sem depender de backend.
+- v1.0: consolidar metodologia, fontes validadas e critérios de publicação institucional.
 
 ## Comandos
 
