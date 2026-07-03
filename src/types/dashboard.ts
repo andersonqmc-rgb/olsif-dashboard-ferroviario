@@ -68,10 +68,37 @@ export type Bottleneck = {
   olsifRelation: string
 }
 
+export type MethodologicalStatus =
+  | 'Estruturada conceitualmente'
+  | 'Hipótese de pesquisa'
+  | 'Depende de fonte pública'
+  | 'Depende de validação externa'
+  | 'Não mensurada nesta versão'
+
+export type ScenarioReadingStatus = 'Maior maturidade' | 'Ponto crítico' | 'Em validação' | 'Não mensurado'
+
 export type IctfDimension = {
+  id: string
   dimension: string
-  value: number
-  interpretation: string
+  description: string
+  guidingQuestion: string
+  methodologicalStatus: MethodologicalStatus
+  evidenceNeeded: string
+  institutionalCare: string
+  scenarioReading: ScenarioReadingStatus
+}
+
+export type IctfScenarioReading = {
+  factor: string
+  reading: string
+  status: ScenarioReadingStatus
+}
+
+export type IctfScenario = {
+  title: string
+  context: string
+  readings: IctfScenarioReading[]
+  methodologicalLimit: string
 }
 
 export type SourceType = 'Oficial' | 'Institucional' | 'Empresarial' | 'Acadêmica' | 'Setorial' | 'Hipótese'

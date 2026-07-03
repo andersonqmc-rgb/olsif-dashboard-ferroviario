@@ -12,11 +12,9 @@
       </a>
 
       <nav aria-label="Navegação principal">
-        <a href="#estado">Estado</a>
-        <a href="#radar">Radar</a>
-        <a href="#cargas">Cargas</a>
-        <a href="#ictf">ICTF</a>
-        <a href="#fontes">Fontes</a>
+        <a href="#inicio">Início</a>
+        <a href="#modulos">Módulos</a>
+        <a href="#modulos">ICTF</a>
       </nav>
     </header>
   )

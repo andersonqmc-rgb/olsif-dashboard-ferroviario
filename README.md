@@ -1,14 +1,18 @@
 ﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.2.4 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
+Versão 0.3.0 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
-A v0.2 transforma o MVP em um **Painel de Inteligência Frugal do OLSIF**. O objetivo é organizar informações preliminares sobre Malha Sul, Corredor Mercosul, AP ANTT nº 11/2026, cargas, fluxos, terminais, gargalos, fontes, extensão universitária e linha do tempo institucional.
+A v0.3 estrutura o **ICTF — Índice de Capilaridade Terminal Ferroviária** como hipótese metodológica conceitual. O objetivo é organizar perguntas, dimensões, evidências desejadas e cuidados institucionais sobre terminais, pátios, porto seco, retroáreas, cargas potenciais, gargalos, dados e governança.
+
+Esta versão também reorganiza o painel em abas/seções para reduzir a extensão visual da página e facilitar apresentações acadêmicas, extensionistas e institucionais.
 
 ## Aviso sobre os dados
 
-Os dados desta versão são **mockados, preliminares, simulados ou curados manualmente para prototipagem**. Eles não representam diagnóstico final, base oficial consolidada nem posição institucional definitiva.
+Os dados desta versão são **mockados, preliminares, simulados, placeholders metodológicos ou curados manualmente para prototipagem**. Eles não representam diagnóstico final, base oficial consolidada, índice calculado nem posição institucional definitiva.
 
 A finalidade é demonstrar uma arquitetura simples para observar, organizar, validar fontes, mapear cargas e gargalos, acompanhar frentes estratégicas e preparar decisões futuras. O uso é exploratório e interno ao desenvolvimento do projeto.
+
+Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, **não avalia operadores** e **não produz decisão operacional**. As dimensões são perguntas de pesquisa para futura validação acadêmica, extensionista e institucional.
 
 ## Como executar
 
@@ -27,17 +31,35 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 - `src/styles`: estilos visuais compartilhados.
 - `src/types`: definições TypeScript usadas em mais de um arquivo.
 
-## Módulos da v0.2
+## Módulos da v0.3
 
-- Estado do OLSIF.
-- Radar Estratégico.
+- Visão Geral: o que é o OLSIF, objetivo do dashboard e limites da v0.3.
+- ICTF Conceitual: oito dimensões, status metodológico, evidência desejada e cuidado institucional.
 - Matriz de Cargas e Fluxos.
 - Gargalos do Corredor Mercosul.
-- ICTF — Capilaridade Terminal Ferroviária.
-- Fontes e Confiabilidade.
-- Extensão / Projeto 5740.
-- Linha do Tempo OLSIF.
+- Frentes OLSIF: Radar Estratégico e Extensão / Projeto 5740.
+- Fontes e Linha do Tempo.
 - Indicadores demonstrativos e comparação modal herdados da v0.1.
+
+## Dimensões conceituais do ICTF na v0.3
+
+- Acesso ferroviário.
+- Acesso rodoviário/intermodal.
+- Pátio, retroárea e capacidade física.
+- Capacidade de transbordo.
+- Integração aduaneira/fronteiriça.
+- Conexão com cargas potenciais.
+- Disponibilidade e qualidade dos dados.
+- Governança, coordenação e operação.
+
+## Refinamentos da v0.3.0
+
+- Reposiciona a versão como **ICTF Conceitual e Capilaridade Terminal**.
+- Substitui a leitura de pontuação do ICTF por uma estrutura conceitual sem cálculo real.
+- Inclui oito dimensões com pergunta orientadora, status metodológico, evidência desejada e cuidado institucional.
+- Adiciona cenário demonstrativo para mostrar como o ICTF pode orientar leitura qualitativa sem virar diagnóstico oficial.
+- Reorganiza a interface em abas/seções: Visão Geral, ICTF, Cargas, Gargalos, Frentes, Fontes e Demonstrativos.
+- Reforça que valores e cenários são simulados, placeholders ou hipóteses de pesquisa.
 
 ## Refinamentos da v0.2.1
 
@@ -79,7 +101,14 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 
 ## Próximas versões previstas
 
-- v0.3: evoluir o ICTF conceitual e a capilaridade terminal, ainda com valores demonstrativos.
+- v0.3.1: atualizar Estado Atual e Linha do Tempo com marcos consolidados em julho.
+- v0.4: organizar módulo interno ANTT / Malha Sul, se ainda fizer sentido antes do prazo da AP nº 11/2026.
+- v0.5: criar camada interna de acompanhamento das ICs, sem avaliação pública de estudantes.
+- v0.6: organizar Escuta Externa / Evidências 5740 somente após aplicação piloto real.
+- v0.7: aprimorar Radar e Fontes com curadoria manual/semiautomatizada, sem scraping e sem APIs.
+- v0.8: aproximar Dashboard e OLSIF-CALC com cenários demonstrativos transparentes.
+- v0.9: protótipo integrado de inteligência frugal.
+- v1.0: versão demonstrável institucionalmente, apenas após maturidade documental, metodológica e institucional.
 
 ## Comandos
 

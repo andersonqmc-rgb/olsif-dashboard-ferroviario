@@ -237,9 +237,13 @@ h2 {
 .executive-card h3,
 .bottleneck-card h3,
 .milestone-card h3,
+.fronts-layout h3,
 .metric-row h3,
+.objective-grid h3,
+.scenario-section h3,
 .step-item h3,
-.timeline-item h3 {
+.timeline-item h3,
+.timeline-item h4 {
   margin: 14px 0 8px;
   color: #16332d;
   font-size: 1.02rem;
@@ -249,6 +253,8 @@ h2 {
 .executive-card p,
 .bottleneck-card p,
 .milestone-card p,
+.objective-grid p,
+.scenario-section p,
 .metric-row p,
 .step-item p,
 .timeline-item p {
@@ -259,6 +265,8 @@ h2 {
 .executive-card p,
 .bottleneck-card p,
 .milestone-card p,
+.objective-grid p,
+.scenario-section p,
 .metric-row p,
 .step-item p,
 .timeline-item p,
@@ -687,8 +695,16 @@ tbody tr:last-child td {
 
   .executive-grid,
   .bottleneck-grid,
+  .fronts-layout,
+  .ictf-dimension-grid,
   .milestone-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .objective-grid,
+  .ictf-concept-grid,
+  .scenario-section {
+    grid-template-columns: 1fr;
   }
 
   .indicator-grid {
@@ -710,7 +726,11 @@ tbody tr:last-child td {
 
   .executive-grid,
   .bottleneck-grid,
+  .fronts-layout,
+  .ictf-concept-grid,
+  .ictf-dimension-grid,
   .milestone-grid,
+  .objective-grid,
   .indicator-grid {
     grid-template-columns: 1fr;
   }
@@ -756,7 +776,7 @@ html {
   top: 79px;
   z-index: 15;
   display: grid;
-  grid-template-columns: repeat(9, minmax(132px, 1fr));
+  grid-template-columns: repeat(7, minmax(132px, 1fr));
   gap: 8px;
   overflow-x: auto;
   margin: 0 0 28px;
@@ -767,7 +787,7 @@ html {
   backdrop-filter: blur(10px);
 }
 
-.module-navigation a {
+.module-navigation button {
   display: grid;
   gap: 4px;
   min-height: 64px;
@@ -775,13 +795,23 @@ html {
   border: 1px solid #d8e3de;
   border-radius: 8px;
   background: #ffffff;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
   text-decoration: none;
+  text-align: left;
 }
 
-.module-navigation a:hover,
-.module-navigation a:focus-visible {
+.module-navigation button:hover,
+.module-navigation button:focus-visible,
+.module-navigation button[aria-selected="true"] {
   border-color: #16715f;
   outline: none;
+}
+
+.module-navigation button[aria-selected="true"] {
+  background: #edf5f2;
+  box-shadow: inset 0 0 0 1px #16715f;
 }
 
 .module-navigation strong {
@@ -799,17 +829,17 @@ html {
 .module-section,
 .comparison-section {
   margin-bottom: 22px;
-  border: 1px solid #d8e3de;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.46);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .module-section {
-  padding: 42px 28px;
+  padding: 42px 0;
 }
 
 .comparison-section {
-  padding: 42px 28px 54px;
+  padding: 42px 0 54px;
 }
 
 .executive-card,
@@ -822,7 +852,7 @@ html {
 
 @media (max-width: 1120px) {
   .module-navigation {
-    grid-template-columns: repeat(9, minmax(128px, 160px));
+    grid-template-columns: repeat(7, minmax(128px, 170px));
   }
 }
 
@@ -834,7 +864,7 @@ html {
   .module-navigation {
     position: static;
     display: grid;
-    grid-template-columns: repeat(9, minmax(132px, 1fr));
+    grid-template-columns: repeat(7, minmax(132px, 1fr));
   }
 }
 
@@ -916,4 +946,136 @@ html {
 .step-item__deadline {
   color: #65452d !important;
   font-weight: 800;
+}
+
+/* v0.3: abas/seções e ICTF conceitual. */
+.dashboard-tabs {
+  min-height: 720px;
+}
+
+.module-panel {
+  outline: none;
+}
+
+.objective-grid,
+.ictf-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.objective-grid article,
+.ictf-concept-grid article,
+.ictf-dimension-card,
+.scenario-item {
+  border: 1px solid #d8e3de;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(22, 51, 45, 0.04);
+}
+
+.objective-grid article,
+.ictf-concept-grid article,
+.ictf-dimension-card,
+.scenario-item {
+  padding: 18px;
+}
+
+.objective-grid span {
+  color: #16715f;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.ictf-dimension-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ictf-dimension-card__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+}
+
+.ictf-dimension-card__header h3 {
+  margin: 0;
+  color: #16332d;
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.ictf-dimension-card__header div,
+.scenario-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ictf-dimension-card dl {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.ictf-dimension-card dt {
+  color: #16332d;
+  font-size: 0.73rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.ictf-dimension-card dd {
+  color: #5f766f;
+  line-height: 1.5;
+}
+
+.scenario-section {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  gap: 28px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #d8e3de;
+}
+
+.scenario-section .section-notice {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.scenario-list {
+  align-content: start;
+}
+
+.scenario-item {
+  flex: 1 1 220px;
+}
+
+.scenario-item h4 {
+  margin: 12px 0 6px;
+  color: #16332d;
+  font-size: 0.96rem;
+  line-height: 1.25;
+}
+
+.fronts-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+}
+
+.fronts-layout > div > h3 {
+  margin-top: 0;
+}
+
+.timeline-item h4,
+.step-item h4 {
+  margin: 0 0 8px;
+  color: #16332d;
+  font-size: 1.02rem;
+  line-height: 1.25;
 }

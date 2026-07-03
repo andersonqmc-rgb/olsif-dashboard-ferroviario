@@ -4,6 +4,7 @@
   ExecutiveCard,
   ExtensionStep,
   IctfDimension,
+  IctfScenario,
   OlsifSource,
   StrategicEvent,
   TimelineMilestone,
@@ -54,10 +55,10 @@ export const executiveCards: ExecutiveCard[] = [
   {
     id: 'olsif-calc-dashboard',
     title: 'OLSIF-CALC/Dashboard',
-    status: 'MVP v0.2',
+    status: 'v0.3 em estruturação',
     priority: 'Média',
-    lastUpdate: '2026-06-27',
-    note: 'Manter painel auditável, frugal e preparado para futura integração com APIs.',
+    lastUpdate: '2026-07-03',
+    note: 'Estruturar o ICTF como hipótese metodológica, sem cálculo real ou diagnóstico oficial.',
   },
 ]
 
@@ -355,15 +356,115 @@ export const bottlenecks: Bottleneck[] = [
 ]
 
 export const ictfDimensions: IctfDimension[] = [
-  { dimension: 'Acesso territorial', value: 62, interpretation: 'Cobertura regional a detalhar por município e eixo logístico.' },
-  { dimension: 'Capacidade física terminal', value: 48, interpretation: 'Capacidade simulada; requer validação por terminal.' },
-  { dimension: 'Integração modal', value: 55, interpretation: 'Potencial intermodal existe, mas precisa de arranjos operacionais.' },
-  { dimension: 'Integração aduaneira/regulatória', value: 36, interpretation: 'Dimensão sensível para fluxos Brasil-Argentina.' },
-  { dimension: 'Dados e digitalização', value: 42, interpretation: 'Maturidade informacional ainda em desenvolvimento.' },
-  { dimension: 'Segurança/cargas críticas', value: 50, interpretation: 'Requer critérios específicos para combustíveis, carnes e cargas de maior valor.' },
-  { dimension: 'Carga de retorno', value: 44, interpretation: 'Indicador importante para reduzir ociosidade e custo logístico.' },
-  { dimension: 'Governança', value: 58, interpretation: 'Depende de articulação entre instituições, operadores e território.' },
+  {
+    id: 'acesso-ferroviario',
+    dimension: 'Acesso ferroviário',
+    description: 'Observa se o terminal, pátio ou porto seco possui conexão ferroviária útil, ativa ou recuperável.',
+    guidingQuestion: 'A infraestrutura ferroviária consegue chegar ao ponto de geração, consolidação ou transbordo da carga?',
+    methodologicalStatus: 'Estruturada conceitualmente',
+    evidenceNeeded: 'Mapas públicos, documentos de concessão, inventários de pátios e registros operacionais verificáveis.',
+    institutionalCare: 'Não interpretar existência de trilho como disponibilidade operacional efetiva.',
+    scenarioReading: 'Em validação',
+  },
+  {
+    id: 'acesso-rodoviario-intermodal',
+    dimension: 'Acesso rodoviário/intermodal',
+    description: 'Verifica a capacidade de chegada de cargas por rodovia e a possibilidade de integração com ferrovia.',
+    guidingQuestion: 'O terminal recebe carga com acesso rodoviário adequado e consegue convertê-la em fluxo ferroviário?',
+    methodologicalStatus: 'Hipótese de pesquisa',
+    evidenceNeeded: 'Fontes públicas sobre acessos, ligações rodoviárias, terminais interiores e operações intermodais.',
+    institutionalCare: 'Evitar concluir eficiência intermodal sem dados de tempo, custo e frequência.',
+    scenarioReading: 'Maior maturidade',
+  },
+  {
+    id: 'patio-retroarea',
+    dimension: 'Pátio, retroárea e capacidade física',
+    description: 'Analisa espaço físico para manobra, armazenagem, estacionamento, filas, segregação e expansão.',
+    guidingQuestion: 'Há área física suficiente para operar cargas com escala, segurança e previsibilidade?',
+    methodologicalStatus: 'Depende de fonte pública',
+    evidenceNeeded: 'Plantas públicas, imagens autorizadas, documentos técnicos e informações oficiais de infraestrutura.',
+    institutionalCare: 'Não publicar estimativas de capacidade física sem fonte identificada.',
+    scenarioReading: 'Ponto crítico',
+  },
+  {
+    id: 'transbordo',
+    dimension: 'Capacidade de transbordo',
+    description: 'Considera equipamentos, processos e arranjos capazes de transferir carga entre modos.',
+    guidingQuestion: 'O terminal possui meios para transformar carga potencial em operação ferroviária real?',
+    methodologicalStatus: 'Hipótese de pesquisa',
+    evidenceNeeded: 'Registros públicos de equipamentos, tipos de carga atendidos, serviços e operações autorizadas.',
+    institutionalCare: 'Tratar capacidade como hipótese até haver evidência operacional verificável.',
+    scenarioReading: 'Em validação',
+  },
+  {
+    id: 'aduana-fronteira',
+    dimension: 'Integração aduaneira/fronteiriça',
+    description: 'Observa a articulação entre fluxo logístico, controle aduaneiro, fronteira e documentação.',
+    guidingQuestion: 'O terminal reduz ou amplia fricções nos fluxos Brasil-Argentina?',
+    methodologicalStatus: 'Depende de validação externa',
+    evidenceNeeded: 'Normas, procedimentos públicos, registros de fronteira e validação com atores institucionais.',
+    institutionalCare: 'Não atribuir gargalos a órgãos ou operadores sem evidência formal.',
+    scenarioReading: 'Ponto crítico',
+  },
+  {
+    id: 'cargas-potenciais',
+    dimension: 'Conexão com cargas potenciais',
+    description: 'Relaciona o terminal com cadeias produtivas, cargas de retorno e fluxos prováveis do corredor.',
+    guidingQuestion: 'Há cargas com escala, regularidade ou perfil compatível com solução ferroviária ou intermodal?',
+    methodologicalStatus: 'Estruturada conceitualmente',
+    evidenceNeeded: 'CONAB, MDIC, ONTL/Infra S.A., documentos setoriais e matriz territorial em validação.',
+    institutionalCare: 'Dados produtivos e comerciais não equivalem automaticamente a demanda ferroviária.',
+    scenarioReading: 'Maior maturidade',
+  },
+  {
+    id: 'dados',
+    dimension: 'Disponibilidade e qualidade dos dados',
+    description: 'Mede a maturidade informacional para acompanhar fontes, evidências, periodicidade e lacunas.',
+    guidingQuestion: 'Existem dados suficientes, públicos e rastreáveis para sustentar análise metodológica?',
+    methodologicalStatus: 'Depende de fonte pública',
+    evidenceNeeded: 'Bases públicas, documentos oficiais, diário de bordo, planilha-mãe e fichas de validação.',
+    institutionalCare: 'Separar fato, hipótese, pista e ponto a verificar em toda visualização.',
+    scenarioReading: 'Em validação',
+  },
+  {
+    id: 'governanca',
+    dimension: 'Governança, coordenação e operação',
+    description: 'Observa articulação entre instituições, operadores, território, pesquisa, extensão e regulação.',
+    guidingQuestion: 'Há coordenação mínima para transformar infraestrutura em serviço logístico integrado?',
+    methodologicalStatus: 'Não mensurada nesta versão',
+    evidenceNeeded: 'Instrumentos formais, atas, documentos públicos, consultas e validações institucionais futuras.',
+    institutionalCare: 'Não comunicar contatos exploratórios como parcerias formalizadas.',
+    scenarioReading: 'Não mensurado',
+  },
 ]
+
+export const ictfScenario: IctfScenario = {
+  title: 'Cenário demonstrativo: terminal fronteiriço com porto seco',
+  context:
+    'Leitura fictícia para mostrar como o ICTF pode organizar hipóteses sobre capilaridade terminal. Não representa avaliação real de terminal, operador ou infraestrutura específica.',
+  readings: [
+    {
+      factor: 'Carga potencial próxima ao eixo Uruguaiana-Paso de los Libres',
+      reading:
+        'Quando há carga potencial e acesso intermodal plausível, o ICTF ajuda a perguntar se o terminal consegue converter essa carga em fluxo ferroviário real.',
+      status: 'Maior maturidade',
+    },
+    {
+      factor: 'Fricção aduaneira e coordenação binacional',
+      reading:
+        'Mesmo com infraestrutura, gargalos documentais, regulatórios ou operacionais podem reduzir a capilaridade terminal percebida.',
+      status: 'Ponto crítico',
+    },
+    {
+      factor: 'Dados públicos incompletos',
+      reading:
+        'A ausência de fonte rastreável impede transformar a hipótese em indicador. Nesta versão, o correto é manter como ponto em validação.',
+      status: 'Em validação',
+    },
+  ],
+  methodologicalLimit:
+    'A v0.3 não calcula ICTF, não ranqueia terminais e não produz diagnóstico oficial. O cenário serve apenas para testar linguagem, estrutura de dados e leitura metodológica.',
+}
 
 export const olsifSources: OlsifSource[] = [
   {

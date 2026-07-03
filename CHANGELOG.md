@@ -1,4 +1,13 @@
-﻿# Changelog
+# Changelog
+
+## v0.3.0
+
+- Reposiciona o dashboard como versão de ICTF Conceitual e Capilaridade Terminal.
+- Reorganiza a interface em abas/seções para reduzir a página longa e facilitar apresentações.
+- Substitui a leitura numérica do ICTF por oito dimensões conceituais com pergunta orientadora, status metodológico, evidência desejada e cuidado institucional.
+- Adiciona cenário demonstrativo de leitura terminal/fronteiriça sem cálculo real, ranking oficial ou diagnóstico consolidado.
+- Conecta Cargas e Gargalos à lógica de capilaridade terminal sem usar dados reais de parceiros, APIs, scraping ou banco de dados.
+- Atualiza README e versão do pacote para 0.3.0.
 
 ## v0.2.4
 
@@ -42,8 +51,3 @@
 - Cria MVP demonstrativo em React + Vite + TypeScript.
 - Inclui página institucional, quatro indicadores e comparação simples entre modais.
 - Usa apenas dados fictícios locais, sem mapas, APIs externas ou banco de dados.
-
-
-
-
-
