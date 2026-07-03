@@ -1,5 +1,12 @@
 ﻿# Changelog
 
+## v0.2.2
+
+- Enriquecida a Matriz de Cargas e Fluxos com código de rastreabilidade, status da informação, relação com Uruguaiana-Paso de los Libres e próxima validação.
+- Enriquecidos os Gargalos com metadados de rastreabilidade, status, relação fronteiriça e validação pendente.
+- Mantidos os dados como mockados, preliminares e de uso exploratório.
+- Atualiza README e versão do pacote para 0.2.2.
+
 ## v0.2.1
 
 - Adiciona navegação interna por módulos para facilitar o uso da página longa.
@@ -21,5 +28,6 @@
 - Cria MVP demonstrativo em React + Vite + TypeScript.
 - Inclui página institucional, quatro indicadores e comparação simples entre modais.
 - Usa apenas dados fictícios locais, sem mapas, APIs externas ou banco de dados.
+
 
 

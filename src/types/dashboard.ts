@@ -34,25 +34,37 @@ export type StrategicEvent = {
   nextAction: string
 }
 
+export type InformationStatus = 'Confirmado' | 'Hipótese forte' | 'Hipótese fraca' | 'A verificar'
+
+export type BorderRelation = 'Direta' | 'Indireta' | 'A verificar'
+
 export type CargoFlow = {
+  traceabilityCode: string
   cargo: string
   probableOrigin: string
   probableDestination: string
   currentMode: string
   terminalOrBorder: string
+  borderRelation: BorderRelation
   railPotential: 'Alto' | 'Médio' | 'Baixo'
   confidence: 'Alta' | 'Média' | 'Baixa'
-  informationStatus: string
+  informationStatus: InformationStatus
   source: string
+  lastReview: string
+  nextValidationStep: string
   note: string
 }
 
 export type Bottleneck = {
+  traceabilityCode: string
   title: string
   category: 'Modal' | 'Operacional' | 'Físico' | 'Institucional/binacional' | 'Informacional'
+  informationStatus: InformationStatus
+  borderRelation: BorderRelation
   description: string
   impact: string
   evidence: string
+  nextValidationStep: string
   olsifRelation: string
 }
 

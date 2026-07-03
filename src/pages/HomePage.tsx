@@ -33,7 +33,7 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.1</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.2</p>
           <h1 id="overview-title">Painel de Inteligência Frugal do OLSIF</h1>
           <p>
             Protótipo interno para acompanhar frentes estratégicas, cargas,
@@ -110,20 +110,23 @@ export function HomePage() {
           </p>
         </div>
         <SectionNotice title="Uso exploratório">
-          Matriz baseada em informações preliminares, hipóteses de pesquisa e fontes a validar. Não use como base oficial de decisão operacional.
+          Matriz baseada em informações preliminares, hipóteses de pesquisa e fontes a validar. Os códigos de rastreabilidade servem para curadoria interna, não como confirmação oficial.
         </SectionNotice>
         <div className="table-wrap" role="region" aria-label="Tabela de cargas e fluxos" tabIndex={0}>
           <table>
             <thead>
               <tr>
+                <th>Código</th>
                 <th>Carga</th>
+                <th>Status</th>
+                <th>Relação Uruguaiana-Paso</th>
                 <th>Origem provável</th>
                 <th>Destino provável</th>
                 <th>Modal atual</th>
                 <th>Terminal/fronteira</th>
                 <th>Potencial</th>
                 <th>Confiança</th>
-                <th>Status</th>
+                <th>Última revisão</th>
                 <th>Fonte</th>
                 <th>Observação</th>
               </tr>
@@ -131,16 +134,19 @@ export function HomePage() {
             <tbody>
               {cargoFlows.map((flow) => (
                 <tr key={flow.cargo}>
+                  <td className="traceability-code">{flow.traceabilityCode}</td>
                   <th scope="row">{flow.cargo}</th>
+                  <td><StatusBadge value={flow.informationStatus} /></td>
+                  <td><StatusBadge value={flow.borderRelation} /></td>
                   <td>{flow.probableOrigin}</td>
                   <td>{flow.probableDestination}</td>
                   <td>{flow.currentMode}</td>
                   <td>{flow.terminalOrBorder}</td>
                   <td><StatusBadge value={flow.railPotential} /></td>
-                  <td>{flow.confidence}</td>
-                  <td>{flow.informationStatus}</td>
+                  <td><StatusBadge value={flow.confidence} /></td>
+                  <td>{flow.lastReview}</td>
                   <td>{flow.source}</td>
-                  <td>{flow.note}</td>
+                  <td>{flow.note} <span className="validation-note">Próxima validação: {flow.nextValidationStep}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -160,12 +166,17 @@ export function HomePage() {
           </p>
         </div>
         <SectionNotice title="Hipóteses em validação">
-          Os gargalos listados são categorias analíticas preliminares. Eles indicam pontos de atenção, não conclusão oficial consolidada.
+          Os gargalos listados são categorias analíticas preliminares. Status, relação fronteiriça e códigos indicam rastreabilidade interna, não conclusão oficial consolidada.
         </SectionNotice>
         <div className="bottleneck-grid">
           {bottlenecks.map((item) => (
             <article className="bottleneck-card" key={item.title}>
-              <StatusBadge value={item.category} />
+              <div className="bottleneck-card__meta">
+                <span className="traceability-code">{item.traceabilityCode}</span>
+                <StatusBadge value={item.category} />
+                <StatusBadge value={item.informationStatus} />
+                <StatusBadge value={item.borderRelation} />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <dl>
@@ -173,6 +184,8 @@ export function HomePage() {
                 <dd>{item.impact}</dd>
                 <dt>Fonte/evidência</dt>
                 <dd>{item.evidence}</dd>
+                <dt>Próxima validação</dt>
+                <dd>{item.nextValidationStep}</dd>
                 <dt>Relação com OLSIF</dt>
                 <dd>{item.olsifRelation}</dd>
               </dl>
@@ -344,5 +357,8 @@ export function HomePage() {
     </main>
   )
 }
+
+
+
 
 

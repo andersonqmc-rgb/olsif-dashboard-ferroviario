@@ -848,3 +848,31 @@ html {
     padding: 34px 18px;
   }
 }
+
+/* v0.2.2: rastreabilidade visual para Cargas e Gargalos. */
+.traceability-code {
+  color: #24443c;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.validation-note {
+  display: block;
+  margin-top: 8px;
+  color: #6b5948;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.bottleneck-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+#cargas table {
+  min-width: 1240px;
+}
