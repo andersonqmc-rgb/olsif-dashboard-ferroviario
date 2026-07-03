@@ -876,3 +876,19 @@ html {
 #cargas table {
   min-width: 1240px;
 }
+
+/* v0.2.3: leitura de Fontes e Linha do Tempo com metadados de curadoria. */
+#fontes table {
+  min-width: 1120px;
+}
+
+.milestone-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.milestone-card .validation-note {
+  color: #6b5948;
+}

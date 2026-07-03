@@ -1,5 +1,12 @@
 ﻿# Changelog
 
+## v0.2.3
+
+- Reforçado o módulo Fontes e Confiabilidade com tipo de fonte, data de referência, status de validação e observação metodológica.
+- Reforçada a Linha do Tempo OLSIF com frente, referência temporal, status e nota de validação.
+- Mantida linguagem de curadoria preliminar, sem confirmar parceria formal ou diagnóstico oficial.
+- Atualiza README e versão do pacote para 0.2.3.
+
 ## v0.2.2
 
 - Enriquecida a Matriz de Cargas e Fluxos com código de rastreabilidade, status da informação, relação com Uruguaiana-Paso de los Libres e próxima validação.
@@ -28,6 +35,7 @@
 - Cria MVP demonstrativo em React + Vite + TypeScript.
 - Inclui página institucional, quatro indicadores e comparação simples entre modais.
 - Usa apenas dados fictícios locais, sem mapas, APIs externas ou banco de dados.
+
 
 
 

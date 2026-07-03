@@ -74,12 +74,16 @@ export type IctfDimension = {
   interpretation: string
 }
 
+export type SourceType = 'Oficial' | 'Institucional' | 'Empresarial' | 'Acadêmica' | 'Setorial' | 'Hipótese'
+
 export type OlsifSource = {
   source: string
-  type: string
+  sourceType: SourceType
+  referenceDate: string
   theme: string
-  validationStatus: string
+  validationStatus: InformationStatus
   olsifUse: string
+  note: string
 }
 
 export type ExtensionStepStatus = 'Concluído' | 'Em andamento' | 'Pendente'
@@ -90,8 +94,13 @@ export type ExtensionStep = {
   dueDate?: string
 }
 
+export type TimelineFront = 'Institucional' | 'Técnica' | 'Editorial' | 'Extensionista' | 'Regulatória' | 'Cooperação' | 'Pesquisa aplicada' | 'Rede técnica'
+
 export type TimelineMilestone = {
   label: string
   category: string
-  status: string
+  front: TimelineFront
+  referenceDate: string
+  status: InformationStatus
+  note: string
 }

@@ -33,7 +33,7 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.2</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.3</p>
           <h1 id="overview-title">Painel de Inteligência Frugal do OLSIF</h1>
           <p>
             Protótipo interno para acompanhar frentes estratégicas, cargas,
@@ -231,29 +231,35 @@ export function HomePage() {
             <h2 id="fontes-title">Fontes e Confiabilidade</h2>
           </div>
           <p>
-            Registro de fontes candidatas e seu papel previsto na curadoria do
-            observatório.
+            Registro preliminar de fontes candidatas, tipo, data de referência e uso previsto na curadoria do observatório.
           </p>
         </div>
+        <SectionNotice title="Curadoria preliminar">
+          A classificação das fontes organiza o trabalho interno do OLSIF. Ela não confirma parceria, chancela institucional ou validação final dos dados.
+        </SectionNotice>
         <div className="table-wrap" role="region" aria-label="Tabela de fontes e confiabilidade" tabIndex={0}>
           <table>
             <thead>
               <tr>
                 <th>Fonte</th>
-                <th>Tipo</th>
+                <th>Tipo de fonte</th>
+                <th>Referência</th>
                 <th>Tema</th>
                 <th>Status de validação</th>
                 <th>Uso no OLSIF</th>
+                <th>Observação</th>
               </tr>
             </thead>
             <tbody>
               {olsifSources.map((source) => (
                 <tr key={source.source}>
                   <th scope="row">{source.source}</th>
-                  <td>{source.type}</td>
+                  <td><StatusBadge value={source.sourceType} /></td>
+                  <td>{source.referenceDate}</td>
                   <td>{source.theme}</td>
-                  <td>{source.validationStatus}</td>
+                  <td><StatusBadge value={source.validationStatus} /></td>
                   <td>{source.olsifUse}</td>
+                  <td>{source.note}</td>
                 </tr>
               ))}
             </tbody>
@@ -290,17 +296,23 @@ export function HomePage() {
             <h2 id="linha-title">Linha do Tempo OLSIF</h2>
           </div>
           <p>
-            Marcos institucionais e técnicos que ajudam a explicar a evolução do
-            observatório.
+            Marcos institucionais, técnicos, editoriais, extensionistas e regulatórios que ajudam a organizar a memória do observatório.
           </p>
         </div>
+        <SectionNotice title="Memória em validação">
+          A linha do tempo organiza marcos de trabalho e pistas documentais. Ela não substitui relatório oficial nem comprova parceria formal.
+        </SectionNotice>
         <div className="milestone-grid">
           {timelineMilestones.map((milestone, index) => (
             <article className="milestone-card" key={milestone.label}>
               <span>{String(index + 1).padStart(2, '0')}</span>
+              <div className="milestone-card__meta">
+                <StatusBadge value={milestone.front} />
+                <StatusBadge value={milestone.status} />
+              </div>
               <h3>{milestone.label}</h3>
-              <p>{milestone.category}</p>
-              <StatusBadge value={milestone.status} />
+              <p>{milestone.category} · Referência: {milestone.referenceDate}</p>
+              <p className="validation-note">{milestone.note}</p>
             </article>
           ))}
         </div>
@@ -357,6 +369,8 @@ export function HomePage() {
     </main>
   )
 }
+
+
 
 
 
