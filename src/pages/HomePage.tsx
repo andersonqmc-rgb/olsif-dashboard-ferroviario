@@ -1,6 +1,7 @@
 ﻿import { ComparisonChart } from '../components/dashboard/ComparisonChart'
 import { ExecutiveCard } from '../components/dashboard/ExecutiveCard'
 import { IndicatorCard } from '../components/dashboard/IndicatorCard'
+import { ModuleNavigation } from '../components/dashboard/ModuleNavigation'
 import { SectionNotice } from '../components/dashboard/SectionNotice'
 import { StatusBadge } from '../components/dashboard/StatusBadge'
 import { indicators, transportComparison } from '../data/demonstrativeData'
@@ -15,12 +16,24 @@ import {
   timelineMilestones,
 } from '../data/intelligenceData'
 
+const moduleNavigationItems = [
+  { href: '#estado', label: 'Estado', description: 'frentes prioritárias' },
+  { href: '#radar', label: 'Radar', description: 'eventos monitorados' },
+  { href: '#cargas', label: 'Cargas', description: 'matriz preliminar' },
+  { href: '#gargalos', label: 'Gargalos', description: 'hipóteses em validação' },
+  { href: '#ictf', label: 'ICTF', description: 'indicador conceitual' },
+  { href: '#fontes', label: 'Fontes', description: 'rastreabilidade' },
+  { href: '#extensao', label: 'Extensão', description: 'Projeto 5740' },
+  { href: '#linha-do-tempo', label: 'Linha do Tempo', description: 'memória técnica' },
+  { href: '#indicadores', label: 'Indicadores', description: 'valores demonstrativos' },
+]
+
 export function HomePage() {
   return (
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.1</p>
           <h1 id="overview-title">Painel de Inteligência Frugal do OLSIF</h1>
           <p>
             Protótipo interno para acompanhar frentes estratégicas, cargas,
@@ -36,6 +49,8 @@ export function HomePage() {
           </p>
         </div>
       </section>
+
+      <ModuleNavigation items={moduleNavigationItems} />
 
       <section className="module-section" id="estado" aria-labelledby="estado-title">
         <div className="section-heading">
@@ -329,3 +344,5 @@ export function HomePage() {
     </main>
   )
 }
+
+

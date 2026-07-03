@@ -1,5 +1,12 @@
 ﻿# Changelog
 
+## v0.2.1
+
+- Adiciona navegação interna por módulos para facilitar o uso da página longa.
+- Ajusta a leitura visual das seções sem alterar os dados mockados da v0.2.
+- Melhora espaçamentos, hierarquia visual e responsividade do painel.
+- Atualiza README e versão do pacote para 0.2.1.
+
 ## v0.2.0
 
 - Reposiciona o MVP como Painel de Inteligência Frugal do OLSIF.
@@ -14,4 +21,5 @@
 - Cria MVP demonstrativo em React + Vite + TypeScript.
 - Inclui página institucional, quatro indicadores e comparação simples entre modais.
 - Usa apenas dados fictícios locais, sem mapas, APIs externas ou banco de dados.
+
 

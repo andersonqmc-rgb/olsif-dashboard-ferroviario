@@ -1,6 +1,6 @@
 ﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.2 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
+Versão 0.2.1 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
 A v0.2 transforma o MVP em um **Painel de Inteligência Frugal do OLSIF**. O objetivo é organizar informações preliminares sobre Malha Sul, Corredor Mercosul, AP ANTT nº 11/2026, cargas, fluxos, terminais, gargalos, fontes, extensão universitária e linha do tempo institucional.
 
@@ -39,6 +39,13 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 - Linha do Tempo OLSIF.
 - Indicadores demonstrativos e comparação modal herdados da v0.1.
 
+## Refinamentos da v0.2.1
+
+- Navegação interna por módulos logo após a abertura do painel.
+- Ajustes visuais para reduzir a sensação de página longa.
+- Melhor hierarquia de seções, cards e leitura em desktop, notebook e telas menores.
+- Preservação dos avisos de dados preliminares, simulados, demonstrativos e não oficiais.
+
 ## Escopo técnico
 
 - Não utiliza backend.
@@ -50,13 +57,14 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 
 ## Próximas versões previstas
 
-- v0.3: revisar dados mockados, separar módulos maiores em componentes próprios e melhorar navegação interna.
-- v0.4: iniciar gráficos com biblioteca dedicada, mantendo dados locais e auditáveis.
-- v0.5: estudar mapas e camadas territoriais com Leaflet, ainda sem depender de backend.
-- v1.0: consolidar metodologia, fontes validadas e critérios de publicação institucional.
+- v0.2.2: refinar Matriz de Cargas e Gargalos com foco em rastreabilidade e status da informação.
+- v0.2.3: reforçar Fontes, Confiabilidade e Linha do Tempo.
+- v0.2.4: melhorar o acompanhamento do Projeto 5740 / Extensão.
+- v0.3: evoluir o ICTF conceitual e a capilaridade terminal, ainda com valores demonstrativos.
 
 ## Comandos
 
 - `npm run dev`: inicia o ambiente de desenvolvimento.
 - `npm run build`: verifica o TypeScript e gera a versão de publicação.
 - `npm run preview`: visualiza localmente a versão de publicação.
+
