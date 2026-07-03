@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.2
+
+- Atualiza a versão do dashboard para 0.3.2.
+- Consolida o estado atual após fechamento e auditoria da v0.3.1.
+- Inclui o Projeto 5930 / Inovação como frente ativa de referência para evolução tecnológica e inteligência frugal.
+- Acrescenta marcos de linha do tempo sobre Projeto 5930, Dashboard v0.3.1 e incorporação do MVP Territorial-Logístico v0.2.
+- Renomeia a seção de fontes para Fontes, Estado Atual e Linha do Tempo.
+- Mantém linguagem de protótipo público/exploratório, dados preliminares e ausência de diagnóstico oficial.
+- Atualiza README e versão do pacote para 0.3.2.
+
 ## v0.3.1
 
 - Ajusta a página principal para apresentar o OLSIF e seus objetivos antes do ICTF.

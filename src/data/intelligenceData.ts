@@ -46,6 +46,14 @@ export const executiveCards: ExecutiveCard[] = [
     note: 'Conectar dossiê, escuta externa, instrumentos de coleta e relatórios previstos.',
   },
   {
+    id: 'projeto-5930',
+    title: 'Projeto 5930 / Inovação',
+    status: 'Registrado e ativo',
+    priority: 'Alta',
+    lastUpdate: '2026-07-01',
+    note: 'Marco institucional para organizar tecnologia, inteligência frugal e evolução do dashboard, sem prometer gêmeo digital nesta versão.',
+  },
+  {
     id: 'ic2-matriz',
     title: 'IC2 / Matriz Territorial',
     status: 'Protótipo inicial',
@@ -56,10 +64,10 @@ export const executiveCards: ExecutiveCard[] = [
   {
     id: 'olsif-calc-dashboard',
     title: 'OLSIF-CALC/Dashboard',
-    status: 'v0.3 em estruturação',
+    status: 'v0.3.2 em consolidação',
     priority: 'Média',
     lastUpdate: '2026-07-03',
-    note: 'Estruturar o ICTF como hipótese metodológica, sem cálculo real ou diagnóstico oficial.',
+    note: 'Consolidar estado atual, linha do tempo e resultados territoriais sem cálculo real, dado sensível ou diagnóstico oficial.',
   },
 ]
 
@@ -836,6 +844,30 @@ export const extensionSteps: ExtensionStep[] = [
 ]
 
 export const timelineMilestones: TimelineMilestone[] = [
+  {
+    label: 'Projeto 5930 registrado e ativo',
+    category: 'Inovação tecnológica',
+    front: 'Institucional',
+    referenceDate: '01/07/2026',
+    status: 'Confirmado',
+    note: 'Marco de referência para a frente de inovação, inteligência frugal e evolução do dashboard; não implica produto final ou solução operacional consolidada.',
+  },
+  {
+    label: 'Dashboard v0.3.1 fechado e auditado',
+    category: 'Produto tecnológico',
+    front: 'Técnica',
+    referenceDate: '03/07/2026',
+    status: 'Confirmado',
+    note: 'Versão com apresentação do OLSIF na página principal e resultados territoriais do MVP v0.2 incorporados como conteúdo preliminar.',
+  },
+  {
+    label: 'MVP Territorial-Logístico v0.2 incorporado ao painel',
+    category: 'Resultado preliminar',
+    front: 'Pesquisa aplicada',
+    referenceDate: 'Julho de 2026',
+    status: 'Hipótese forte',
+    note: 'Síntese operacional usada para leitura exploratória; o PDF original e validações futuras continuam sendo referências necessárias.',
+  },
   {
     label: 'Estruturação do OLSIF',
     category: 'Marco estruturante',

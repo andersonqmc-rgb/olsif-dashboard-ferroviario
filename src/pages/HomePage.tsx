@@ -55,7 +55,7 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.3.1</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.3.2</p>
           <h1 id="overview-title">Observatório de Logística Sustentável e Inovação Ferroviária</h1>
           <p>
             O OLSIF/UNIPAMPA é uma iniciativa acadêmica, extensionista e tecnológica
@@ -66,9 +66,9 @@ export function HomePage() {
         <div className="overview-section__notice">
           <strong>Protótipo público e exploratório</strong>
           <p>
-            O dashboard organiza dados preliminares, hipóteses de pesquisa e resultados
-            demonstrativos. Ele não representa diagnóstico oficial, base consolidada ou
-            decisão operacional.
+            O dashboard organiza dados preliminares, hipóteses de pesquisa, marcos de
+            acompanhamento e resultados demonstrativos. Ele não representa diagnóstico
+            oficial, base consolidada ou decisão operacional.
           </p>
         </div>
       </section>
@@ -100,8 +100,8 @@ function OverviewPanel() {
           <h2 id="visao-geral-title">Apresentação do OLSIF</h2>
         </div>
         <p>
-          O painel apresenta o observatório, seus objetivos e seus módulos de trabalho
-          antes de aprofundar ICTF, cargas, gargalos, fontes e resultados territoriais.
+          O painel apresenta o observatório, seus objetivos, estado atual e módulos de
+          trabalho antes de aprofundar ICTF, cargas, gargalos, fontes e resultados territoriais.
         </p>
       </div>
 
@@ -436,11 +436,11 @@ function SourcesPanel() {
       <div className="section-heading">
         <div>
           <p className="eyebrow">Auditabilidade</p>
-          <h2>Fontes e Linha do Tempo</h2>
+          <h2>Fontes, Estado Atual e Linha do Tempo</h2>
         </div>
         <p>
-          Fontes, status de validação e marcos de memória técnica para separar dado,
-          hipótese, pista e informação em validação.
+          Fontes, status de validação, marcos consolidados e memória técnica para separar
+          dado, hipótese, pista e informação em validação.
         </p>
       </div>
       <SectionNotice title="Curadoria preliminar">
