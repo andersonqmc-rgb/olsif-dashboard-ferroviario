@@ -697,12 +697,15 @@ tbody tr:last-child td {
   .bottleneck-grid,
   .fronts-layout,
   .ictf-dimension-grid,
+  .territorial-bottleneck-list,
+  .territorial-summary,
   .milestone-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .objective-grid,
   .ictf-concept-grid,
+  .pilot-cargo-card,
   .scenario-section {
     grid-template-columns: 1fr;
   }
@@ -731,6 +734,8 @@ tbody tr:last-child td {
   .ictf-dimension-grid,
   .milestone-grid,
   .objective-grid,
+  .territorial-bottleneck-list,
+  .territorial-summary,
   .indicator-grid {
     grid-template-columns: 1fr;
   }
@@ -968,6 +973,9 @@ html {
 .objective-grid article,
 .ictf-concept-grid article,
 .ictf-dimension-card,
+.pilot-cargo-card,
+.territorial-bottleneck-card,
+.territorial-summary article,
 .scenario-item {
   border: 1px solid #d8e3de;
   border-radius: 8px;
@@ -978,6 +986,9 @@ html {
 .objective-grid article,
 .ictf-concept-grid article,
 .ictf-dimension-card,
+.pilot-cargo-card,
+.territorial-bottleneck-card,
+.territorial-summary article,
 .scenario-item {
   padding: 18px;
 }
@@ -1070,6 +1081,101 @@ html {
 
 .fronts-layout > div > h3 {
   margin-top: 0;
+}
+
+.territorial-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.territorial-summary span {
+  display: block;
+  color: #16715f;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.territorial-summary strong {
+  display: block;
+  margin-top: 8px;
+  color: #16332d;
+  line-height: 1.3;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pilot-cargo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
+  gap: 28px;
+  margin-bottom: 22px;
+}
+
+.pilot-cargo-card h3 {
+  margin: 10px 0 12px;
+  color: #16332d;
+  font-size: 1.4rem;
+}
+
+.pilot-cargo-card h4 {
+  margin: 18px 0 8px;
+  color: #16332d;
+  font-size: 0.95rem;
+}
+
+.pilot-cargo-card dl,
+.territorial-bottleneck-card dl {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pilot-cargo-card dt,
+.territorial-bottleneck-card dt {
+  color: #16332d;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pilot-cargo-card dd,
+.territorial-bottleneck-card dd {
+  color: #5f766f;
+  line-height: 1.5;
+}
+
+.pilot-cargo-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #5f766f;
+  line-height: 1.5;
+}
+
+.territorial-bottleneck-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.territorial-bottleneck-card h3 {
+  margin: 0 0 10px;
+  color: #16332d;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+#resultados-panel table {
+  min-width: 1240px;
 }
 
 .timeline-item h4,

@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.1
+
+- Ajusta a página principal para apresentar o OLSIF e seus objetivos antes do ICTF.
+- Renomeia a aba final para Resultados e incorpora dados preliminares do MVP Territorial-Logístico v0.2.
+- Inclui síntese da carga-piloto trigo, rota provável, pontos de fronteira, gargalos associados e perguntas em aberto.
+- Inclui matriz territorial v0.2 com cargas, origem/destino provável, modal atual, potencial ferroviário e classe de evidência.
+- Acrescenta gargalos territoriais e perguntas de validação associadas a atores possíveis.
+- Mantém linguagem de resultado preliminar, dado parcial, inferência técnica e hipótese OLSIF, sem diagnóstico oficial.
+- Atualiza README e versão do pacote para 0.3.1.
+
 ## v0.3.0
 
 - Reposiciona o dashboard como versão de ICTF Conceitual e Capilaridade Terminal.

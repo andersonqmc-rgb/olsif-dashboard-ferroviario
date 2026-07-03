@@ -7,6 +7,7 @@
   IctfScenario,
   OlsifSource,
   StrategicEvent,
+  TerritorialMvpResult,
   TimelineMilestone,
 } from '../types/dashboard'
 
@@ -464,6 +465,212 @@ export const ictfScenario: IctfScenario = {
   ],
   methodologicalLimit:
     'A v0.3 não calcula ICTF, não ranqueia terminais e não produz diagnóstico oficial. O cenário serve apenas para testar linguagem, estrutura de dados e leitura metodológica.',
+}
+
+export const territorialMvpResult: TerritorialMvpResult = {
+  version: 'MVP Territorial-Logístico v0.2',
+  title: 'Resultados preliminares da Frente Territorial-Logística',
+  authorContext:
+    'Material elaborado na frente territorial-logística do OLSIF/UNIPAMPA, com foco no corredor Uruguaiana-Paso de los Libres.',
+  referenceDate: 'Julho de 2026',
+  objective:
+    'Estruturar uma leitura territorial inicial do corredor Uruguaiana-Paso de los Libres, organizando cargas, rotas prováveis, terminais/fronteiras, gargalos, oportunidades e perguntas para validação externa.',
+  methodologicalSequence: 'Carga → Rota → Terminal/Fronteira → Gargalo → Oportunidade',
+  methodologicalNote:
+    'O relatório diferencia dados confirmados, dados parciais, inferências técnicas e hipóteses OLSIF. Os resultados abaixo são uma síntese operacional para o dashboard e não substituem o PDF original nem validação institucional.',
+  evidenceClasses: ['Dado confirmado', 'Dado parcial', 'Inferência técnica', 'Hipótese OLSIF', 'A verificar'],
+  pilotCargo: {
+    cargo: 'Trigo',
+    route: 'Argentina → Paso de los Libres → Uruguaiana → mercado brasileiro',
+    sourceBasis:
+      'Bolsa de Cereais de Buenos Aires, Secretaria de Agricultura da Argentina, MDIC, Receita Federal e DNIT.',
+    currentModeStatus:
+      'A verificar. Há indícios de forte uso rodoviário na fronteira, mas não confirmação específica para o trigo no eixo estudado.',
+    involvedPoints:
+      'Paso de los Libres, Ponte Internacional Agustín P. Justo-Getúlio Vargas, Área de Controle Integrado e Porto Seco de Uruguaiana.',
+    railPotential: 'Alto',
+    associatedBottlenecks: [
+      'Predominância do transporte rodoviário.',
+      'Necessidade de maior integração ferroviária.',
+      'Ausência de dados públicos por tipo de carga e rota específica.',
+    ],
+    openQuestions: [
+      'Qual volume de trigo argentino entra no Brasil por esse eixo?',
+      'Esse fluxo passa efetivamente por Paso de los Libres-Uruguaiana?',
+      'Qual é o modal predominante para o trigo nesse corredor?',
+      'Há terminal ferroviário apto para esse tipo de carga?',
+      'Quais atores poderiam confirmar essa rota?',
+      'A recuperação da Linha Urquiza teria impacto direto nesse fluxo?',
+    ],
+  },
+  cargoResults: [
+    {
+      cargo: 'Trigo',
+      probableOrigin: 'Argentina',
+      probableDestination: 'Brasil',
+      currentMode: 'Rodoviário por inferência',
+      cargoType: 'Granel sólido',
+      terminalOrBorder: 'Paso de los Libres / Uruguaiana',
+      railPotential: 'Alto',
+      evidenceClass: 'Inferência técnica',
+      validatingActor: 'AIMAS, operadores logísticos, Receita Federal e Porto Seco',
+      observation: 'Carga-piloto do estudo, com rota plausível e necessidade de validação operacional.',
+    },
+    {
+      cargo: 'Soja',
+      probableOrigin: 'Brasil / Argentina',
+      probableDestination: 'Brasil / exportação',
+      currentMode: 'Rodoviário / ferroviário varia conforme operação',
+      cargoType: 'Granel sólido',
+      terminalOrBorder: 'Uruguaiana a validar',
+      railPotential: 'Alto',
+      evidenceClass: 'Dado parcial',
+      validatingActor: 'Órgãos públicos e operadores logísticos',
+      observation: 'Cadeia agro forte, mas sem confirmação específica de modal e rota no eixo.',
+    },
+    {
+      cargo: 'Milho',
+      probableOrigin: 'Argentina / Brasil',
+      probableDestination: 'Brasil / exportação',
+      currentMode: 'Rodoviário por inferência',
+      cargoType: 'Granel sólido',
+      terminalOrBorder: 'Fronteira Brasil-Argentina',
+      railPotential: 'Alto',
+      evidenceClass: 'Hipótese OLSIF',
+      validatingActor: 'Operadores logísticos',
+      observation: 'Fluxo sazonal e dependente de confirmação por Uruguaiana.',
+    },
+    {
+      cargo: 'Celulose',
+      probableOrigin: 'Brasil',
+      probableDestination: 'Argentina / exportação',
+      currentMode: 'Rodoviário / ferroviário parcial',
+      cargoType: 'Industrial',
+      terminalOrBorder: 'Uruguaiana',
+      railPotential: 'Médio',
+      evidenceClass: 'Dado parcial',
+      validatingActor: 'Indústria florestal e operadores',
+      observation: 'Carga com relevância exportadora, mas sem confirmação de rota específica pelo corredor estudado.',
+    },
+    {
+      cargo: 'Autopeças',
+      probableOrigin: 'Brasil',
+      probableDestination: 'Argentina',
+      currentMode: 'Rodoviário',
+      cargoType: 'Industrial fracionada',
+      terminalOrBorder: 'Uruguaiana',
+      railPotential: 'Médio',
+      evidenceClass: 'Dado confirmado',
+      validatingActor: 'Receita Federal e operadores industriais',
+      observation: 'Comércio industrial Brasil-Argentina com necessidade de detalhar volume por categoria.',
+    },
+    {
+      cargo: 'Carne bovina',
+      probableOrigin: 'Brasil / Argentina',
+      probableDestination: 'Exportação regional',
+      currentMode: 'Rodoviário refrigerado',
+      cargoType: 'Perecível',
+      terminalOrBorder: 'Fronteira Brasil-Argentina',
+      railPotential: 'Médio',
+      evidenceClass: 'Inferência técnica',
+      validatingActor: 'MAPA, transportadoras e operadores logísticos',
+      observation: 'Cadeia sensível que demanda validação sobre rota, frio e tempo de travessia.',
+    },
+    {
+      cargo: 'Arroz',
+      probableOrigin: 'Brasil',
+      probableDestination: 'Argentina / Mercosul',
+      currentMode: 'Rodoviário',
+      cargoType: 'Granel sólido',
+      terminalOrBorder: 'Uruguaiana',
+      railPotential: 'Médio',
+      evidenceClass: 'Hipótese OLSIF',
+      validatingActor: 'Órgãos agrícolas e operadores',
+      observation: 'Carga forte no RS, mas com fluxo local específico ainda a validar.',
+    },
+    {
+      cargo: 'Combustíveis',
+      probableOrigin: 'Brasil',
+      probableDestination: 'Argentina',
+      currentMode: 'Rodoviário',
+      cargoType: 'Líquido',
+      terminalOrBorder: 'Fronteira Brasil-Argentina',
+      railPotential: 'Médio',
+      evidenceClass: 'Inferência técnica',
+      validatingActor: 'ANP e operadores especializados',
+      observation: 'Circulação energética regional dependente de mercado, segurança e regulação.',
+    },
+    {
+      cargo: 'Veículos',
+      probableOrigin: 'Brasil',
+      probableDestination: 'Argentina',
+      currentMode: 'Rodoviário',
+      cargoType: 'Industrial acabado',
+      terminalOrBorder: 'Uruguaiana',
+      railPotential: 'Médio',
+      evidenceClass: 'Dado confirmado',
+      validatingActor: 'DNIT, Receita Federal e operadores automotivos',
+      observation: 'Fluxo relevante no Mercosul, com necessidade de detalhar tipo de veículo, modal e fronteira.',
+    },
+  ],
+  bottlenecks: [
+    {
+      bottleneck: 'Dependência do transporte rodoviário',
+      location: 'Corredor Uruguaiana-Paso de los Libres',
+      currentEvidence:
+        'Fluxo intenso de caminhões na Ponte Internacional e no Porto Seco; infraestrutura rodoviária predominante.',
+      missingValidation: 'Percentual de participação por modal e tipo de carga.',
+      validationQuestion: 'Quais cargas utilizam predominantemente o transporte rodoviário nesse corredor?',
+      validatingActors: 'DNIT, Receita Federal, operadores logísticos e concessionárias.',
+    },
+    {
+      bottleneck: 'Baixa utilização da ferrovia',
+      location: 'Corredor Brasil-Argentina',
+      currentEvidence:
+        'Existem ligações ferroviárias na região, mas faltam dados públicos consolidados sobre utilização operacional.',
+      missingValidation: 'Volume transportado, frequência, capacidade disponível e limitações.',
+      validationQuestion: 'Qual é a utilização atual da ferrovia no corredor Uruguaiana-Paso de los Libres?',
+      validatingActors: 'Operadores ferroviários, AIMAS e órgãos públicos brasileiros e argentinos.',
+    },
+    {
+      bottleneck: 'Falta de dados públicos por tipo de carga',
+      location: 'Escala regional',
+      currentEvidence:
+        'Dados públicos aparecem agregados e nem sempre detalham rota, produto, origem, destino e modal.',
+      missingValidation: 'Bases com fluxo por produto e modal no corredor.',
+      validationQuestion: 'Existem bases públicas com dados de fluxo por produto e modal nesse corredor?',
+      validatingActors: 'Receita Federal, MDIC, IBGE e órgãos argentinos.',
+    },
+    {
+      bottleneck: 'Integração limitada entre informações dos dois países',
+      location: 'Fronteira Brasil-Argentina',
+      currentEvidence:
+        'Existem sistemas nacionais de informação, mas nem sempre integrados ou comparáveis.',
+      missingValidation: 'Compatibilidade entre bases brasileiras e argentinas.',
+      validationQuestion: 'Há compartilhamento de dados logísticos entre Brasil e Argentina para esse corredor?',
+      validatingActors: 'Receita Federal, Aduana Argentina e órgãos de integração do Mercosul.',
+    },
+    {
+      bottleneck: 'Gargalos operacionais na fronteira',
+      location: 'Ponte Internacional, Porto Seco e Área de Controle Integrado',
+      currentEvidence:
+        'Estudos institucionais apontam necessidade de melhorias na fluidez do comércio fronteiriço.',
+      missingValidation: 'Tempos médios de espera, sazonalidade e principais causas de atraso.',
+      validationQuestion: 'Quais fatores mais impactam o tempo de passagem de cargas pela fronteira?',
+      validatingActors: 'Receita Federal, Porto Seco de Uruguaiana, transportadoras e operadores logísticos.',
+    },
+    {
+      bottleneck: 'Ausência de validação das rotas por produto',
+      location: 'Todas as cargas da matriz',
+      currentEvidence:
+        'A matriz identifica produtos com potencial de circulação, mas nem todos possuem comprovação documental da rota específica por Uruguaiana.',
+      missingValidation: 'Confirmação da utilização do corredor por carga.',
+      validationQuestion: 'Quais produtos utilizam efetivamente o corredor Uruguaiana-Paso de los Libres?',
+      validatingActors: 'Operadores logísticos, Porto Seco, Receita Federal e transportadoras.',
+    },
+  ],
+  conclusion:
+    'A carga-piloto trigo mostrou-se adequada para testar a metodologia territorial do OLSIF. Os resultados são base técnica inicial para futuras investigações, entrevistas e aprimoramento contínuo, não conclusões definitivas.',
 }
 
 export const olsifSources: OlsifSource[] = [

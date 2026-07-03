@@ -15,6 +15,7 @@ import {
   ictfScenario,
   olsifSources,
   strategicEvents,
+  territorialMvpResult,
   timelineMilestones,
 } from '../data/intelligenceData'
 
@@ -25,7 +26,7 @@ const moduleNavigationItems = [
   { id: 'gargalos', label: 'Gargalos', description: 'hipóteses em validação' },
   { id: 'frentes', label: 'Frentes', description: 'radar e extensão' },
   { id: 'fontes', label: 'Fontes', description: 'rastreabilidade' },
-  { id: 'demonstrativos', label: 'Demonstrativos', description: 'indicadores e comparação' },
+  { id: 'resultados', label: 'Resultados', description: 'MVP v0.2 e cenários' },
 ]
 
 export function HomePage() {
@@ -43,8 +44,8 @@ export function HomePage() {
         return <FrontsPanel />
       case 'fontes':
         return <SourcesPanel />
-      case 'demonstrativos':
-        return <DemonstrativePanel />
+      case 'resultados':
+        return <ResultsPanel />
       default:
         return <OverviewPanel />
     }
@@ -54,19 +55,20 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.3.0</p>
-          <h1 id="overview-title">ICTF Conceitual e Capilaridade Terminal</h1>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.3.1</p>
+          <h1 id="overview-title">Observatório de Logística Sustentável e Inovação Ferroviária</h1>
           <p>
-            Protótipo público e exploratório do OLSIF para organizar hipóteses sobre
-            terminais, pátios, porto seco, cargas, gargalos e integração ferroviária
-            no Corredor Mercosul.
+            O OLSIF/UNIPAMPA é uma iniciativa acadêmica, extensionista e tecnológica
+            voltada à produção de inteligência logística aplicada à inovação ferroviária,
+            intermodalidade, sustentabilidade e integração Brasil-Argentina.
           </p>
         </div>
         <div className="overview-section__notice">
-          <strong>Planejamento metodológico</strong>
+          <strong>Protótipo público e exploratório</strong>
           <p>
-            A v0.3 estrutura o ICTF como hipótese de pesquisa. Não há cálculo real,
-            ranking de terminais, diagnóstico oficial ou decisão operacional nesta versão.
+            O dashboard organiza dados preliminares, hipóteses de pesquisa e resultados
+            demonstrativos. Ele não representa diagnóstico oficial, base consolidada ou
+            decisão operacional.
           </p>
         </div>
       </section>
@@ -95,41 +97,41 @@ function OverviewPanel() {
       <div className="section-heading">
         <div>
           <p className="eyebrow">Tela inicial</p>
-          <h2 id="visao-geral-title">O que é o Dashboard OLSIF</h2>
+          <h2 id="visao-geral-title">Apresentação do OLSIF</h2>
         </div>
         <p>
-          O painel organiza informações preliminares para apoiar pesquisa aplicada,
-          inovação tecnológica, extensão universitária e comunicação institucional prudente.
+          O painel apresenta o observatório, seus objetivos e seus módulos de trabalho
+          antes de aprofundar ICTF, cargas, gargalos, fontes e resultados territoriais.
         </p>
       </div>
 
       <SectionNotice title="Uso exploratório">
-        O dashboard é um protótipo interno/publicável, com dados simulados, preliminares ou curados manualmente. Ele não substitui relatório oficial, nota técnica protocolada ou validação institucional final.
+        O dashboard é um protótipo interno/publicável, com dados simulados, preliminares, parciais ou curados manualmente. Ele não substitui relatório oficial, nota técnica protocolada ou validação institucional final.
       </SectionNotice>
 
       <div className="objective-grid" aria-label="Objetivos e limites da versão 0.3">
         <article>
           <span>01</span>
-          <h3>Objetivo da v0.3</h3>
+          <h3>O que é o OLSIF</h3>
           <p>
-            Estruturar o ICTF como linguagem metodológica para observar como terminais
-            podem converter carga potencial em fluxo ferroviário real.
+            Um observatório universitário para organizar inteligência logística,
+            pesquisa aplicada, extensão, inovação e leitura territorial sobre integração ferroviária.
           </p>
         </article>
         <article>
           <span>02</span>
-          <h3>O que a versão não faz</h3>
+          <h3>Objetivo do dashboard</h3>
           <p>
-            Não calcula índice oficial, não ranqueia terminais, não usa dados privados
-            e não promete gêmeo digital operacional.
+            Reunir frentes, fontes, cargas, gargalos, ICTF conceitual e resultados
+            preliminares em uma interface simples, auditável e de baixo custo.
           </p>
         </article>
         <article>
           <span>03</span>
-          <h3>Vínculo institucional</h3>
+          <h3>Limites da versão</h3>
           <p>
-            Alinha o Dashboard ao Projeto 5930 e ao Projeto 5789, com relação indireta
-            ao Projeto 5740 para futuras validações extensionistas.
+            Não calcula índice oficial, não ranqueia terminais, não usa dados privados
+            e não apresenta diagnóstico consolidado sobre operadores, órgãos ou infraestrutura.
           </p>
         </article>
       </div>
@@ -495,15 +497,148 @@ function SourcesPanel() {
   )
 }
 
-function DemonstrativePanel() {
+function ResultsPanel() {
   return (
     <>
       <section
-        aria-labelledby="demonstrativos-tab"
-        className="module-section module-panel"
-        id="demonstrativos-panel"
+        aria-labelledby="resultados-tab"
+        className="module-section module-panel results-panel"
+        id="resultados-panel"
         role="tabpanel"
         tabIndex={0}
+      >
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Resultados territoriais</p>
+            <h2>{territorialMvpResult.title}</h2>
+          </div>
+          <p>
+            Síntese operacional do {territorialMvpResult.version}, incorporada ao
+            dashboard como resultado preliminar da frente territorial-logística.
+          </p>
+        </div>
+
+        <SectionNotice title="Resultado preliminar">
+          {territorialMvpResult.methodologicalNote}
+        </SectionNotice>
+
+        <div className="territorial-summary">
+          <article>
+            <span>Versão</span>
+            <strong>{territorialMvpResult.version}</strong>
+            <p>{territorialMvpResult.referenceDate}</p>
+          </article>
+          <article>
+            <span>Sequência metodológica</span>
+            <strong>{territorialMvpResult.methodologicalSequence}</strong>
+            <p>Estrutura usada para testar a leitura territorial do corredor.</p>
+          </article>
+          <article>
+            <span>Classes de evidência</span>
+            <div className="badge-list">
+              {territorialMvpResult.evidenceClasses.map((item) => (
+                <StatusBadge value={item} key={item} />
+              ))}
+            </div>
+          </article>
+        </div>
+
+        <div className="pilot-cargo-card">
+          <div>
+            <p className="eyebrow">Carga-piloto</p>
+            <h3>{territorialMvpResult.pilotCargo.cargo}</h3>
+            <p>{territorialMvpResult.objective}</p>
+            <dl>
+              <dt>Rota provável</dt>
+              <dd>{territorialMvpResult.pilotCargo.route}</dd>
+              <dt>Base de fontes</dt>
+              <dd>{territorialMvpResult.pilotCargo.sourceBasis}</dd>
+              <dt>Modal atual</dt>
+              <dd>{territorialMvpResult.pilotCargo.currentModeStatus}</dd>
+              <dt>Pontos envolvidos</dt>
+              <dd>{territorialMvpResult.pilotCargo.involvedPoints}</dd>
+            </dl>
+          </div>
+          <div>
+            <StatusBadge value={`Potencial ${territorialMvpResult.pilotCargo.railPotential}`} />
+            <h4>Gargalos associados</h4>
+            <ul>
+              {territorialMvpResult.pilotCargo.associatedBottlenecks.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <h4>Perguntas em aberto</h4>
+            <ul>
+              {territorialMvpResult.pilotCargo.openQuestions.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="table-wrap" role="region" aria-label="Tabela de resultados territoriais v0.2" tabIndex={0}>
+          <table>
+            <thead>
+              <tr>
+                <th>Carga</th>
+                <th>Origem provável</th>
+                <th>Destino provável</th>
+                <th>Modal atual</th>
+                <th>Tipo</th>
+                <th>Terminal/fronteira</th>
+                <th>Potencial</th>
+                <th>Classe</th>
+                <th>Ator que valida</th>
+                <th>Observação</th>
+              </tr>
+            </thead>
+            <tbody>
+              {territorialMvpResult.cargoResults.map((item) => (
+                <tr key={item.cargo}>
+                  <th scope="row">{item.cargo}</th>
+                  <td>{item.probableOrigin}</td>
+                  <td>{item.probableDestination}</td>
+                  <td>{item.currentMode}</td>
+                  <td>{item.cargoType}</td>
+                  <td>{item.terminalOrBorder}</td>
+                  <td><StatusBadge value={item.railPotential} /></td>
+                  <td><StatusBadge value={item.evidenceClass} /></td>
+                  <td>{item.validatingActor}</td>
+                  <td>{item.observation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="territorial-bottleneck-list">
+          {territorialMvpResult.bottlenecks.map((item) => (
+            <article className="territorial-bottleneck-card" key={item.bottleneck}>
+              <h3>{item.bottleneck}</h3>
+              <dl>
+                <dt>Onde aparece</dt>
+                <dd>{item.location}</dd>
+                <dt>Evidência atual</dt>
+                <dd>{item.currentEvidence}</dd>
+                <dt>O que falta confirmar</dt>
+                <dd>{item.missingValidation}</dd>
+                <dt>Pergunta de validação</dt>
+                <dd>{item.validationQuestion}</dd>
+                <dt>Atores possíveis</dt>
+                <dd>{item.validatingActors}</dd>
+              </dl>
+            </article>
+          ))}
+        </div>
+
+        <SectionNotice title="Conclusão do MVP v0.2">
+          {territorialMvpResult.conclusion}
+        </SectionNotice>
+      </section>
+
+      <section
+        aria-label="Indicadores demonstrativos"
+        className="module-section module-panel"
       >
         <div className="section-heading">
           <div>

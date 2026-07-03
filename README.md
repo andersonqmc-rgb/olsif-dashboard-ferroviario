@@ -1,8 +1,8 @@
 ﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.3.0 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
+Versão 0.3.1 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
-A v0.3 estrutura o **ICTF — Índice de Capilaridade Terminal Ferroviária** como hipótese metodológica conceitual. O objetivo é organizar perguntas, dimensões, evidências desejadas e cuidados institucionais sobre terminais, pátios, porto seco, retroáreas, cargas potenciais, gargalos, dados e governança.
+A v0.3 estrutura o **ICTF — Índice de Capilaridade Terminal Ferroviária** como hipótese metodológica conceitual. A v0.3.1 ajusta a página principal para apresentar primeiro o OLSIF e incorpora resultados preliminares do **MVP Territorial-Logístico v0.2**.
 
 Esta versão também reorganiza o painel em abas/seções para reduzir a extensão visual da página e facilitar apresentações acadêmicas, extensionistas e institucionais.
 
@@ -33,13 +33,13 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 
 ## Módulos da v0.3
 
-- Visão Geral: o que é o OLSIF, objetivo do dashboard e limites da v0.3.
+- Visão Geral: apresentação do OLSIF, objetivo do dashboard e limites da versão.
 - ICTF Conceitual: oito dimensões, status metodológico, evidência desejada e cuidado institucional.
 - Matriz de Cargas e Fluxos.
 - Gargalos do Corredor Mercosul.
 - Frentes OLSIF: Radar Estratégico e Extensão / Projeto 5740.
 - Fontes e Linha do Tempo.
-- Indicadores demonstrativos e comparação modal herdados da v0.1.
+- Resultados: síntese do MVP Territorial-Logístico v0.2, carga-piloto trigo, matriz territorial, gargalos e indicadores demonstrativos.
 
 ## Dimensões conceituais do ICTF na v0.3
 
@@ -60,6 +60,14 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 - Adiciona cenário demonstrativo para mostrar como o ICTF pode orientar leitura qualitativa sem virar diagnóstico oficial.
 - Reorganiza a interface em abas/seções: Visão Geral, ICTF, Cargas, Gargalos, Frentes, Fontes e Demonstrativos.
 - Reforça que valores e cenários são simulados, placeholders ou hipóteses de pesquisa.
+
+## Refinamentos da v0.3.1
+
+- Reposiciona a página principal para apresentar o OLSIF antes do ICTF.
+- Renomeia a aba final para Resultados e incorpora síntese do MVP Territorial-Logístico v0.2.
+- Inclui carga-piloto trigo, rota provável, gargalos associados, perguntas em aberto e atores de validação.
+- Inclui matriz territorial v0.2 com cargas, origem/destino provável, modal atual, potencial ferroviário e classe de evidência.
+- Mantém os resultados como preliminares, parciais, inferências técnicas ou hipóteses OLSIF, sem diagnóstico oficial.
 
 ## Refinamentos da v0.2.1
 
@@ -101,7 +109,7 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 
 ## Próximas versões previstas
 
-- v0.3.1: atualizar Estado Atual e Linha do Tempo com marcos consolidados em julho.
+- v0.3.2: atualizar Estado Atual e Linha do Tempo com marcos consolidados em julho.
 - v0.4: organizar módulo interno ANTT / Malha Sul, se ainda fizer sentido antes do prazo da AP nº 11/2026.
 - v0.5: criar camada interna de acompanhamento das ICs, sem avaliação pública de estudantes.
 - v0.6: organizar Escuta Externa / Evidências 5740 somente após aplicação piloto real.

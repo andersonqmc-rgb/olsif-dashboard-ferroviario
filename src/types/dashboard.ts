@@ -101,6 +101,61 @@ export type IctfScenario = {
   methodologicalLimit: string
 }
 
+export type TerritorialEvidenceClass =
+  | 'Dado confirmado'
+  | 'Dado parcial'
+  | 'Inferência técnica'
+  | 'Hipótese OLSIF'
+  | 'A verificar'
+
+export type TerritorialCargoResult = {
+  cargo: string
+  probableOrigin: string
+  probableDestination: string
+  currentMode: string
+  cargoType: string
+  terminalOrBorder: string
+  railPotential: 'Alto' | 'Médio' | 'Baixo'
+  evidenceClass: TerritorialEvidenceClass
+  validatingActor: string
+  observation: string
+}
+
+export type PilotCargoResult = {
+  cargo: string
+  route: string
+  sourceBasis: string
+  currentModeStatus: string
+  involvedPoints: string
+  railPotential: 'Alto' | 'Médio' | 'Baixo'
+  associatedBottlenecks: string[]
+  openQuestions: string[]
+}
+
+export type TerritorialBottleneckResult = {
+  bottleneck: string
+  location: string
+  currentEvidence: string
+  missingValidation: string
+  validationQuestion: string
+  validatingActors: string
+}
+
+export type TerritorialMvpResult = {
+  version: string
+  title: string
+  authorContext: string
+  referenceDate: string
+  objective: string
+  methodologicalSequence: string
+  methodologicalNote: string
+  evidenceClasses: TerritorialEvidenceClass[]
+  pilotCargo: PilotCargoResult
+  cargoResults: TerritorialCargoResult[]
+  bottlenecks: TerritorialBottleneckResult[]
+  conclusion: string
+}
+
 export type SourceType = 'Oficial' | 'Institucional' | 'Empresarial' | 'Acadêmica' | 'Setorial' | 'Hipótese'
 
 export type OlsifSource = {
