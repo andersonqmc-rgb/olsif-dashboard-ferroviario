@@ -1,6 +1,6 @@
 ﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.2.3 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
+Versão 0.2.4 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
 A v0.2 transforma o MVP em um **Painel de Inteligência Frugal do OLSIF**. O objetivo é organizar informações preliminares sobre Malha Sul, Corredor Mercosul, AP ANTT nº 11/2026, cargas, fluxos, terminais, gargalos, fontes, extensão universitária e linha do tempo institucional.
 
@@ -61,6 +61,13 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 - Mantém a classificação como curadoria preliminar, sem confirmar parceria formal ou diagnóstico oficial.
 - Preserva dados mockados/curados manualmente em arquivos locais.
 
+## Refinamentos da v0.2.4
+
+- Reforça o módulo Projeto 5740 / Extensão com evidências, status da evidência, próximas ações e prazos críticos.
+- Destaca os prazos de relatório anual em 31/12/2026 e relatório final em 28/06/2027.
+- Mantém o módulo como acompanhamento interno, sem substituir relatório oficial ou prestação de contas.
+- Preserva dados mockados/curados manualmente e sem integração com Google Forms ou APIs.
+
 ## Escopo técnico
 
 - Não utiliza backend.
@@ -72,7 +79,6 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 
 ## Próximas versões previstas
 
-- v0.2.4: melhorar o acompanhamento do Projeto 5740 / Extensão.
 - v0.3: evoluir o ICTF conceitual e a capilaridade terminal, ainda com valores demonstrativos.
 
 ## Comandos
@@ -80,6 +86,7 @@ A finalidade é demonstrar uma arquitetura simples para observar, organizar, val
 - `npm run dev`: inicia o ambiente de desenvolvimento.
 - `npm run build`: verifica o TypeScript e gera a versão de publicação.
 - `npm run preview`: visualiza localmente a versão de publicação.
+
 
 
 

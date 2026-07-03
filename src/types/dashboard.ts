@@ -88,10 +88,17 @@ export type OlsifSource = {
 
 export type ExtensionStepStatus = 'Concluído' | 'Em andamento' | 'Pendente'
 
+export type ExtensionEvidenceType = 'Dossiê' | 'Planilha' | 'Questionário' | 'Validação' | 'Formulário' | 'Aplicação' | 'Síntese' | 'Relatório' | 'Devolutiva'
+
 export type ExtensionStep = {
   title: string
   status: ExtensionStepStatus
+  evidenceType: ExtensionEvidenceType
+  evidenceStatus: InformationStatus
   dueDate?: string
+  isCritical?: boolean
+  evidence: string
+  nextAction: string
 }
 
 export type TimelineFront = 'Institucional' | 'Técnica' | 'Editorial' | 'Extensionista' | 'Regulatória' | 'Cooperação' | 'Pesquisa aplicada' | 'Rede técnica'
@@ -104,3 +111,4 @@ export type TimelineMilestone = {
   status: InformationStatus
   note: string
 }
+

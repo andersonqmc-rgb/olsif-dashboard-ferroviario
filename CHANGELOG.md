@@ -1,5 +1,12 @@
 ﻿# Changelog
 
+## v0.2.4
+
+- Reforçado o módulo Projeto 5740 / Extensão com evidências, status da evidência, próximas ações e prazos críticos.
+- Destacados os marcos de relatório anual em 31/12/2026 e relatório final em 28/06/2027.
+- Mantida linguagem de acompanhamento interno, sem substituir relatório oficial, prestação de contas ou validação institucional final.
+- Atualiza README e versão do pacote para 0.2.4.
+
 ## v0.2.3
 
 - Reforçado o módulo Fontes e Confiabilidade com tipo de fonte, data de referência, status de validação e observação metodológica.
@@ -35,6 +42,7 @@
 - Cria MVP demonstrativo em React + Vite + TypeScript.
 - Inclui página institucional, quatro indicadores e comparação simples entre modais.
 - Usa apenas dados fictícios locais, sem mapas, APIs externas ou banco de dados.
+
 
 
 

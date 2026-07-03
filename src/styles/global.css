@@ -892,3 +892,28 @@ html {
 .milestone-card .validation-note {
   color: #6b5948;
 }
+
+/* v0.2.4: acompanhamento extensionista do Projeto 5740. */
+.extension-step-list {
+  gap: 12px;
+}
+
+.step-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.step-item--critical {
+  padding: 16px;
+  border: 1px solid #dec8b4;
+  border-left: 4px solid #a65f32;
+  border-radius: 8px;
+  background: #fbf4ed;
+}
+
+.step-item__deadline {
+  color: #65452d !important;
+  font-weight: 800;
+}

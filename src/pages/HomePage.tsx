@@ -33,7 +33,7 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.3</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.2.4</p>
           <h1 id="overview-title">Painel de Inteligência Frugal do OLSIF</h1>
           <p>
             Protótipo interno para acompanhar frentes estratégicas, cargas,
@@ -272,23 +272,30 @@ export function HomePage() {
           <p className="eyebrow">Extensão universitária</p>
           <h2 id="extensao-title">Projeto 5740</h2>
           <p>
-            Etapas operacionais para transformar evidências, escutas e produtos
-            técnicos em entregas acompanháveis.
+            Acompanhamento interno das etapas, evidências, prazos críticos e próximas ações do ciclo extensionista.
           </p>
+          <SectionNotice title="Acompanhamento interno">
+            O módulo registra evidências extensionistas preliminares. Ele não substitui relatório oficial, prestação de contas ou validação institucional final.
+          </SectionNotice>
         </div>
-        <div className="step-list">
+        <div className="step-list extension-step-list">
           {extensionSteps.map((step) => (
-            <article className="step-item" key={step.title}>
+            <article className={step.isCritical ? 'step-item step-item--critical' : 'step-item'} key={step.title}>
               <div>
+                <div className="step-item__meta">
+                  <StatusBadge value={step.status} />
+                  <StatusBadge value={step.evidenceType} />
+                  <StatusBadge value={step.evidenceStatus} />
+                </div>
                 <h3>{step.title}</h3>
-                {step.dueDate ? <p>Prazo: {step.dueDate}</p> : null}
+                {step.dueDate ? <p className="step-item__deadline">Prazo: {step.dueDate}</p> : null}
+                <p>{step.evidence}</p>
+                <p className="validation-note">Próxima ação: {step.nextAction}</p>
               </div>
-              <StatusBadge value={step.status} />
             </article>
           ))}
         </div>
       </section>
-
       <section className="module-section" id="linha-do-tempo" aria-labelledby="linha-title">
         <div className="section-heading">
           <div>
@@ -369,6 +376,8 @@ export function HomePage() {
     </main>
   )
 }
+
+
 
 
 
