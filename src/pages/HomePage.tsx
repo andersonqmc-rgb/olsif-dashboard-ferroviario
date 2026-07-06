@@ -64,7 +64,7 @@ export function HomePage() {
           </p>
         </div>
         <div className="overview-section__notice">
-          <strong>Protótipo público e exploratório</strong>
+          <strong>Protótipo interno e exploratório</strong>
           <p>
             O dashboard organiza dados preliminares, hipóteses de pesquisa, marcos de
             acompanhamento e resultados demonstrativos. Ele não representa diagnóstico
@@ -106,7 +106,7 @@ function OverviewPanel() {
       </div>
 
       <SectionNotice title="Uso exploratório">
-        O dashboard é um protótipo interno/publicável, com dados simulados, preliminares, parciais ou curados manualmente. Ele não substitui relatório oficial, nota técnica protocolada ou validação institucional final.
+        O dashboard é um protótipo interno, com possibilidade futura de publicação controlada, e usa dados simulados, preliminares, parciais ou curados manualmente. Ele não substitui relatório oficial, nota técnica protocolada ou validação institucional final.
       </SectionNotice>
 
       <div className="objective-grid" aria-label="Objetivos e limites da versão 0.3">
