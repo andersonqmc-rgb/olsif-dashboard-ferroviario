@@ -5,6 +5,7 @@ import { IndicatorCard } from '../components/dashboard/IndicatorCard'
 import { ModuleNavigation } from '../components/dashboard/ModuleNavigation'
 import { SectionNotice } from '../components/dashboard/SectionNotice'
 import { StatusBadge } from '../components/dashboard/StatusBadge'
+import { anttModuleData } from '../data/anttData'
 import { indicators, transportComparison } from '../data/demonstrativeData'
 import {
   bottlenecks,
@@ -22,12 +23,30 @@ import {
 const moduleNavigationItems = [
   { id: 'visao-geral', label: 'Visão Geral', description: 'OLSIF, objetivo e limites' },
   { id: 'ictf', label: 'ICTF', description: 'capilaridade conceitual' },
+  { id: 'antt', label: 'ANTT', description: 'Malha Sul e AP 11/2026' },
   { id: 'cargas', label: 'Cargas', description: 'matriz preliminar' },
   { id: 'gargalos', label: 'Gargalos', description: 'hipóteses em validação' },
   { id: 'frentes', label: 'Frentes', description: 'radar e extensão' },
   { id: 'fontes', label: 'Fontes', description: 'rastreabilidade' },
   { id: 'resultados', label: 'Resultados', description: 'MVP v0.2 e cenários' },
 ]
+
+function getDeadlineStatus(dueDate: string) {
+  const [year, month, day] = dueDate.split('-').map(Number)
+  const deadline = new Date(year, month - 1, day, 23, 59, 59)
+  const millisecondsPerDay = 1000 * 60 * 60 * 24
+  const daysUntil = Math.ceil((deadline.getTime() - Date.now()) / millisecondsPerDay)
+
+  if (daysUntil > 21) {
+    return { tone: 'green', label: 'Verde', daysUntil }
+  }
+
+  if (daysUntil >= 8) {
+    return { tone: 'yellow', label: 'Amarelo', daysUntil }
+  }
+
+  return { tone: 'red', label: 'Vermelho', daysUntil }
+}
 
 export function HomePage() {
   const [activeModule, setActiveModule] = useState(moduleNavigationItems[0].id)
@@ -36,6 +55,8 @@ export function HomePage() {
     switch (activeModule) {
       case 'ictf':
         return <IctfPanel />
+      case 'antt':
+        return <AnttPanel />
       case 'cargas':
         return <CargoPanel />
       case 'gargalos':
@@ -55,7 +76,7 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.3.2</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.4.0</p>
           <h1 id="overview-title">Observatório de Logística Sustentável e Inovação Ferroviária</h1>
           <p>
             O OLSIF/UNIPAMPA é uma iniciativa acadêmica, extensionista e tecnológica
@@ -234,6 +255,228 @@ function IctfPanel() {
         <SectionNotice title="Limite do cenário">
           {ictfScenario.methodologicalLimit}
         </SectionNotice>
+      </div>
+    </section>
+  )
+}
+
+function AnttPanel() {
+  const deadlineStatus = getDeadlineStatus(anttModuleData.deadline.dueDate)
+  const deadlineText =
+    deadlineStatus.daysUntil >= 0
+      ? `${deadlineStatus.daysUntil} dia(s) até o prazo`
+      : `Prazo vencido há ${Math.abs(deadlineStatus.daysUntil)} dia(s)`
+
+  return (
+    <section
+      aria-labelledby="antt-tab"
+      className="module-section module-panel antt-panel"
+      id="antt-panel"
+      role="tabpanel"
+      tabIndex={0}
+    >
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">Acompanhamento interno</p>
+          <h2>{anttModuleData.title}</h2>
+        </div>
+        <p>
+          Módulo de memória técnica para a frente ANTT / Malha Sul, vinculado à AP nº
+          11/2026 e à preparação interna de contribuição técnica do OLSIF.
+        </p>
+      </div>
+
+      <SectionNotice title="Uso interno e exploratório">
+        {anttModuleData.scopeNote}
+      </SectionNotice>
+
+      <div className="antt-summary-grid">
+        <article>
+          <span>Resumo da frente</span>
+          <p>{anttModuleData.summary}</p>
+        </article>
+        <article className={`antt-deadline antt-deadline--${deadlineStatus.tone}`}>
+          <span>{anttModuleData.deadline.label}</span>
+          <strong>{anttModuleData.deadline.reference}</strong>
+          <p>{deadlineText}</p>
+          <div>
+            <StatusBadge value={`Semáforo ${deadlineStatus.label}`} />
+            <StatusBadge value={anttModuleData.deadline.visibility} />
+          </div>
+        </article>
+        <article>
+          <span>Status da submissão</span>
+          <strong>{anttModuleData.submission.stage}</strong>
+          <p>Atualização: {anttModuleData.submission.lastUpdate}</p>
+          <p className="validation-note">{anttModuleData.submission.note}</p>
+          <StatusBadge value={anttModuleData.submission.visibility} />
+        </article>
+      </div>
+
+      <div className="section-heading section-heading--compact">
+        <div>
+          <p className="eyebrow">Riscos da frente</p>
+          <h3>Rastreio operacional</h3>
+        </div>
+        <p>
+          Riscos acompanham pendências e bloqueios sem atribuir responsabilidade externa
+          sem evidência formal.
+        </p>
+      </div>
+      <div className="antt-risk-grid">
+        {anttModuleData.risks.map((risk, index) => (
+          <article className={index === 0 ? 'antt-risk-card antt-risk-card--critical' : 'antt-risk-card'} key={risk.id}>
+            <div className="bottleneck-card__meta">
+              <span className="traceability-code">R{String(index + 1).padStart(2, '0')}</span>
+              <StatusBadge value={risk.status} />
+              <StatusBadge value={risk.visibility} />
+            </div>
+            <h3>{risk.title}</h3>
+            <dl>
+              <dt>Última verificação</dt>
+              <dd>{risk.lastCheck}</dd>
+              <dt>Próxima ação</dt>
+              <dd>{risk.nextAction}</dd>
+              <dt>Cuidado institucional</dt>
+              <dd>{risk.note}</dd>
+            </dl>
+          </article>
+        ))}
+      </div>
+
+      <div className="section-heading section-heading--compact">
+        <div>
+          <p className="eyebrow">Contribuição técnica</p>
+          <h3>Eixos de contribuição</h3>
+        </div>
+        <p>
+          Agrupamentos temáticos preliminares para organizar leitura técnica, sem
+          converter hipóteses em posição oficial.
+        </p>
+      </div>
+      <div className="antt-axis-grid">
+        {anttModuleData.axes.map((axis) => (
+          <article className="scenario-item" key={axis.title}>
+            <StatusBadge value={axis.visibility} />
+            <h4>{axis.title}</h4>
+            <p>{axis.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="section-heading section-heading--compact">
+        <div>
+          <p className="eyebrow">Matriz de argumentos</p>
+          <h3>Conteúdo validado pela coordenação</h3>
+        </div>
+        <p>
+          A tabela espelha apenas argumentos validados no documento-fonte da contribuição.
+          Enquanto não houver validação, permanece sem linhas analíticas.
+        </p>
+      </div>
+      <div className="table-wrap antt-argument-table" role="region" aria-label="Matriz de argumentos ANTT" tabIndex={0}>
+        <table>
+          <thead>
+            <tr>
+              <th>Tema</th>
+              <th>Argumento</th>
+              <th>Evidência disponível</th>
+              <th>Lacuna</th>
+              <th>Risco</th>
+              <th>Uso previsto</th>
+              <th>Status</th>
+              <th>Visibilidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {anttModuleData.argumentMatrix.length > 0 ? (
+              anttModuleData.argumentMatrix.map((item) => (
+                <tr key={`${item.theme}-${item.argument}`}>
+                  <th scope="row">{item.theme}</th>
+                  <td>{item.argument}</td>
+                  <td>{item.availableEvidence}</td>
+                  <td>{item.gap}</td>
+                  <td>{item.risk}</td>
+                  <td>{item.plannedUse}</td>
+                  <td><StatusBadge value={item.informationStatus} /></td>
+                  <td><StatusBadge value={item.visibility} /></td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <th scope="row">Aguardando validação</th>
+                <td colSpan={7}>
+                  Nenhum argumento foi inserido nesta versão. O conteúdo deve vir da
+                  coordenação OLSIF e do documento-fonte da contribuição ANTT.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="section-heading section-heading--compact">
+        <div>
+          <p className="eyebrow">Fontes ANTT</p>
+          <h3>Referências em validação</h3>
+        </div>
+        <p>
+          Fontes de referência para uso interno, sempre sujeitas à conferência antes de
+          entrar em contribuição técnica.
+        </p>
+      </div>
+      <div className="table-wrap" role="region" aria-label="Fontes ANTT" tabIndex={0}>
+        <table>
+          <thead>
+            <tr>
+              <th>Fonte</th>
+              <th>Tipo</th>
+              <th>Referência</th>
+              <th>Tema</th>
+              <th>Status</th>
+              <th>Uso no OLSIF</th>
+              <th>Observação</th>
+              <th>Visibilidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {anttModuleData.sources.map((source) => (
+              <tr key={source.source}>
+                <th scope="row">{source.source}</th>
+                <td><StatusBadge value={source.sourceType} /></td>
+                <td>{source.referenceDate}</td>
+                <td>{source.theme}</td>
+                <td><StatusBadge value={source.validationStatus} /></td>
+                <td>{source.olsifUse}</td>
+                <td>{source.note}</td>
+                <td><StatusBadge value={source.visibility} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="section-heading section-heading--compact">
+        <div>
+          <p className="eyebrow">Relações estratégicas</p>
+          <h3>Conexões territoriais</h3>
+        </div>
+        <p>
+          Relações de leitura para conectar Malha Sul, Corredor Mercosul e fronteira,
+          mantendo linguagem de hipótese e validação.
+        </p>
+      </div>
+      <div className="antt-relation-grid">
+        {anttModuleData.strategicRelations.map((relation) => (
+          <article className="territorial-bottleneck-card" key={relation.title}>
+            <div className="bottleneck-card__meta">
+              <StatusBadge value={relation.visibility} />
+            </div>
+            <h3>{relation.title}</h3>
+            <p>{relation.description}</p>
+            <p className="validation-note">Cuidado: {relation.care}</p>
+          </article>
+        ))}
       </div>
     </section>
   )

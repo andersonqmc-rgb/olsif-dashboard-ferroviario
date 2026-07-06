@@ -1,8 +1,10 @@
 ﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.3.2 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
+Versão 0.4.0 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
 A v0.3 estrutura o **ICTF — Índice de Capilaridade Terminal Ferroviária** como hipótese metodológica conceitual. A v0.3.1 ajusta a página principal para apresentar primeiro o OLSIF e incorpora resultados preliminares do **MVP Territorial-Logístico v0.2**. A v0.3.2 consolida o estado atual e a linha do tempo com marcos de julho de 2026, incluindo o Projeto 5930 e o fechamento auditado da v0.3.1.
+
+A v0.4.0 cria o módulo interno **ANTT / Malha Sul** para acompanhar a frente da AP ANTT nº 11/2026, com prazo crítico, riscos, status de submissão, eixos de contribuição, matriz de argumentos aguardando validação, fontes ANTT e relações estratégicas.
 
 Esta versão também reorganiza o painel em abas/seções para reduzir a extensão visual da página e facilitar apresentações acadêmicas, extensionistas e institucionais.
 
@@ -31,10 +33,11 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 - `src/styles`: estilos visuais compartilhados.
 - `src/types`: definições TypeScript usadas em mais de um arquivo.
 
-## Módulos da v0.3
+## Módulos da v0.4
 
 - Visão Geral: apresentação do OLSIF, objetivo do dashboard e limites da versão.
 - ICTF Conceitual: oito dimensões, status metodológico, evidência desejada e cuidado institucional.
+- ANTT / Malha Sul: acompanhamento interno da AP nº 11/2026, sem substituir o documento-fonte da contribuição.
 - Matriz de Cargas e Fluxos.
 - Gargalos do Corredor Mercosul.
 - Frentes OLSIF: Radar Estratégico e Extensão / Projeto 5740.
@@ -51,6 +54,27 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 - Conexão com cargas potenciais.
 - Disponibilidade e qualidade dos dados.
 - Governança, coordenação e operação.
+
+## Módulo ANTT / Malha Sul na v0.4.0
+
+- Resumo da frente com placeholder `[TEXTO-COORDENACAO]` até validação textual pela coordenação.
+- Prazo crítico da AP ANTT nº 11/2026 em 10/08/2026, com semáforo calculado localmente.
+- Riscos da frente, com destaque para bloqueio técnico na plataforma ParticipANTT.
+- Status de submissão separado da confiabilidade dos dados; a etapa "Submetida" não deve aparecer sem confirmação explícita.
+- Eixos preliminares de contribuição: capilaridade terminal, integração fronteiriça, cargas potenciais, interoperabilidade, sustentabilidade e dados públicos.
+- Matriz de argumentos pronta para receber apenas conteúdo validado no documento-fonte da contribuição.
+- Fontes ANTT em validação, com tipo, referência temporal, status e observação de uso.
+- Relações estratégicas com Corredor Mercosul / Lote C e Uruguaiana-Paso de los Libres.
+- Campo `visibility` nos dados do módulo, com valor inicial `interno`, preparando futura publicação controlada sem implementar filtro nesta versão.
+
+## Refinamentos da v0.4.0
+
+- Adiciona aba própria ANTT para reduzir refatoração da aba Frentes e dar clareza ao acompanhamento regulatório.
+- Cria `src/data/anttData.ts` para concentrar dados locais do módulo ANTT.
+- Amplia os tipos TypeScript com `Visibility`, `SubmissionStage` e estruturas específicas do módulo.
+- Documenta a distinção entre confiabilidade da informação e estágio de processo.
+- Mantém a contribuição ANTT fora do dashboard, preservando o painel como espelho interno de acompanhamento.
+- Atualiza README, CHANGELOG e versão do pacote para 0.4.0.
 
 ## Refinamentos da v0.3.0
 
@@ -117,7 +141,6 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 
 ## Próximas versões previstas
 
-- v0.4: organizar módulo interno ANTT / Malha Sul, se ainda fizer sentido antes do prazo da AP nº 11/2026.
 - v0.5: criar camada interna de acompanhamento das ICs, sem avaliação pública de estudantes.
 - v0.6: organizar Escuta Externa / Evidências 5740 somente após aplicação piloto real.
 - v0.7: aprimorar Radar e Fontes com curadoria manual/semiautomatizada, sem scraping e sem APIs.

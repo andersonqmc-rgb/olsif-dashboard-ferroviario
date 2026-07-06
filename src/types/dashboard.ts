@@ -36,6 +36,8 @@ export type StrategicEvent = {
 
 export type InformationStatus = 'Confirmado' | 'Hipótese forte' | 'Hipótese fraca' | 'A verificar'
 
+export type Visibility = 'interno' | 'publicavel'
+
 export type BorderRelation = 'Direta' | 'Indireta' | 'A verificar'
 
 export type CargoFlow = {
@@ -192,5 +194,81 @@ export type TimelineMilestone = {
   referenceDate: string
   status: InformationStatus
   note: string
+}
+
+// InformationStatus qualifica confiabilidade de dados; SubmissionStage qualifica etapa de processo.
+export type SubmissionStage = 'Em preparação' | 'Em revisão' | 'Submetida' | 'A verificar'
+
+export type AnttDeadline = {
+  label: string
+  dueDate: string
+  reference: string
+  visibility: Visibility
+}
+
+export type AnttRisk = {
+  id: string
+  title: string
+  status: string
+  lastCheck: string
+  nextAction: string
+  note: string
+  visibility: Visibility
+}
+
+export type AnttSubmissionStatus = {
+  stage: SubmissionStage
+  lastUpdate: string
+  note: string
+  visibility: Visibility
+}
+
+export type AnttContributionAxis = {
+  title: string
+  description: string
+  visibility: Visibility
+}
+
+export type AnttArgument = {
+  theme: string
+  argument: string
+  availableEvidence: string
+  gap: string
+  risk: string
+  plannedUse: string
+  informationStatus: InformationStatus
+  visibility: Visibility
+}
+
+export type AnttSource = {
+  source: string
+  sourceType: SourceType
+  referenceDate: string
+  theme: string
+  validationStatus: InformationStatus
+  olsifUse: string
+  note: string
+  visibility: Visibility
+}
+
+export type AnttStrategicRelation = {
+  title: string
+  description: string
+  care: string
+  visibility: Visibility
+}
+
+export type AnttModuleData = {
+  title: string
+  version: string
+  summary: string
+  scopeNote: string
+  deadline: AnttDeadline
+  submission: AnttSubmissionStatus
+  risks: AnttRisk[]
+  axes: AnttContributionAxis[]
+  argumentMatrix: AnttArgument[]
+  sources: AnttSource[]
+  strategicRelations: AnttStrategicRelation[]
 }
 

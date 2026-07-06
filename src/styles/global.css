@@ -781,7 +781,7 @@ html {
   top: 79px;
   z-index: 15;
   display: grid;
-  grid-template-columns: repeat(7, minmax(132px, 1fr));
+  grid-template-columns: repeat(8, minmax(132px, 1fr));
   gap: 8px;
   overflow-x: auto;
   margin: 0 0 28px;
@@ -857,7 +857,7 @@ html {
 
 @media (max-width: 1120px) {
   .module-navigation {
-    grid-template-columns: repeat(7, minmax(128px, 170px));
+    grid-template-columns: repeat(8, minmax(128px, 170px));
   }
 }
 
@@ -869,7 +869,7 @@ html {
   .module-navigation {
     position: static;
     display: grid;
-    grid-template-columns: repeat(7, minmax(132px, 1fr));
+    grid-template-columns: repeat(8, minmax(132px, 1fr));
   }
 }
 
@@ -1184,4 +1184,141 @@ html {
   color: #16332d;
   font-size: 1.02rem;
   line-height: 1.25;
+}
+
+/* v0.4: módulo interno ANTT / Malha Sul. */
+.section-heading--compact {
+  align-items: start;
+  margin-top: 32px;
+  margin-bottom: 18px;
+}
+
+.section-heading--compact h3 {
+  margin: 8px 0 0;
+  color: #16332d;
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.antt-summary-grid,
+.antt-risk-grid,
+.antt-axis-grid,
+.antt-relation-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.antt-summary-grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr) minmax(240px, 0.8fr);
+}
+
+.antt-risk-grid,
+.antt-axis-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.antt-relation-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.antt-summary-grid article,
+.antt-risk-card {
+  padding: 18px;
+  border: 1px solid #d8e3de;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(22, 51, 45, 0.04);
+}
+
+.antt-summary-grid span {
+  display: block;
+  color: #16715f;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.antt-summary-grid strong {
+  display: block;
+  margin-top: 8px;
+  color: #16332d;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.antt-summary-grid p,
+.antt-risk-card p {
+  color: #5f766f;
+  line-height: 1.55;
+}
+
+.antt-deadline {
+  border-left: 4px solid #16715f !important;
+}
+
+.antt-deadline--yellow {
+  border-left-color: #b7791f !important;
+  background: #fff8ea !important;
+}
+
+.antt-deadline--red,
+.antt-risk-card--critical {
+  border-left: 4px solid #a65f32 !important;
+  background: #fbf4ed !important;
+}
+
+.antt-deadline div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.antt-risk-card h3 {
+  margin: 14px 0 10px;
+  color: #16332d;
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+
+.antt-risk-card dl {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.antt-risk-card dt {
+  color: #16332d;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.antt-risk-card dd {
+  color: #5f766f;
+  line-height: 1.5;
+}
+
+.antt-argument-table table,
+#antt-panel table {
+  min-width: 1180px;
+}
+
+@media (max-width: 980px) {
+  .antt-summary-grid,
+  .antt-risk-grid,
+  .antt-axis-grid,
+  .antt-relation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .antt-summary-grid,
+  .antt-risk-grid,
+  .antt-axis-grid,
+  .antt-relation-grid {
+    grid-template-columns: 1fr;
+  }
 }

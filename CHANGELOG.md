@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.4.0
+
+- Adiciona módulo interno ANTT / Malha Sul como aba própria do dashboard.
+- Inclui acompanhamento da AP ANTT nº 11/2026 com prazo crítico em 10/08/2026 e semáforo calculado localmente.
+- Registra riscos da frente, com destaque para bloqueio técnico na plataforma ParticipANTT.
+- Inclui status de submissão separado da confiabilidade da informação, sem marcar submissão como realizada.
+- Adiciona eixos preliminares de contribuição, matriz de argumentos aguardando validação, fontes ANTT e relações estratégicas.
+- Cria `src/data/anttData.ts` para concentrar os dados locais do módulo.
+- Amplia os tipos TypeScript com `Visibility`, `SubmissionStage` e estruturas específicas da frente ANTT.
+- Mantém o dashboard como espelho interno de acompanhamento, sem backend, APIs, scraping, banco de dados ou dependências novas.
+- Atualiza README e versão do pacote para 0.4.0.
+
 ## v0.3.2
 
 - Atualiza a versão do dashboard para 0.3.2.
