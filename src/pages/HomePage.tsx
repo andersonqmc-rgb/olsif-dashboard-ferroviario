@@ -76,7 +76,7 @@ export function HomePage() {
     <main id="inicio">
       <section className="overview-section" aria-labelledby="overview-title">
         <div className="overview-section__content">
-          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.4.0</p>
+          <p className="eyebrow">Dashboard Ferroviário OLSIF · Versão 0.4.1</p>
           <h1 id="overview-title">Observatório de Logística Sustentável e Inovação Ferroviária</h1>
           <p>
             O OLSIF/UNIPAMPA é uma iniciativa acadêmica, extensionista e tecnológica
@@ -262,8 +262,10 @@ function IctfPanel() {
 
 function AnttPanel() {
   const deadlineStatus = getDeadlineStatus(anttModuleData.deadline.dueDate)
-  const deadlineText =
-    deadlineStatus.daysUntil >= 0
+  const isSubmitted = anttModuleData.submission.stage === 'Submetida'
+  const deadlineText = isSubmitted
+    ? 'Contribuição submetida em 08/07/2026'
+    : deadlineStatus.daysUntil >= 0
       ? `${deadlineStatus.daysUntil} dia(s) até o prazo`
       : `Prazo vencido há ${Math.abs(deadlineStatus.daysUntil)} dia(s)`
 
@@ -282,7 +284,7 @@ function AnttPanel() {
         </div>
         <p>
           Módulo de memória técnica para a frente ANTT / Malha Sul, vinculado à AP nº
-          11/2026 e à preparação interna de contribuição técnica do OLSIF.
+          11/2026 e ao acompanhamento pós-submissão da contribuição técnica enviada em 08/07/2026.
         </p>
       </div>
 
@@ -300,7 +302,7 @@ function AnttPanel() {
           <strong>{anttModuleData.deadline.reference}</strong>
           <p>{deadlineText}</p>
           <div>
-            <StatusBadge value={`Semáforo ${deadlineStatus.label}`} />
+            <StatusBadge value={isSubmitted ? 'Prazo de referência' : `Semáforo ${deadlineStatus.label}`} />
             <StatusBadge value={anttModuleData.deadline.visibility} />
           </div>
         </article>
