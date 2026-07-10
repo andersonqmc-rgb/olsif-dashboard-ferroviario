@@ -16,10 +16,10 @@ export const executiveCards: ExecutiveCard[] = [
   {
     id: 'antt-ap-11-2026',
     title: 'Frente ANTT/AP nº 11/2026',
-    status: 'Monitoramento ativo',
+    status: 'Pós-submissão / acompanhamento',
     priority: 'Alta',
-    lastUpdate: '2026-06-27',
-    note: 'Acompanhar consulta pública, contribuições técnicas e registros no ParticipANTT.',
+    lastUpdate: '2026-07-08',
+    note: 'Acompanhar desdobramentos da contribuição técnica submetida em 08/07/2026, sem expor protocolo ou comprovantes.',
   },
   {
     id: 'corredor-mercosul',
@@ -64,9 +64,9 @@ export const executiveCards: ExecutiveCard[] = [
   {
     id: 'olsif-calc-dashboard',
     title: 'OLSIF-CALC/Dashboard',
-    status: 'v0.3.2 em consolidação',
+    status: 'v0.4.1',
     priority: 'Média',
-    lastUpdate: '2026-07-03',
+    lastUpdate: '2026-07-08',
     note: 'Consolidar estado atual, linha do tempo e resultados territoriais sem cálculo real, dado sensível ou diagnóstico oficial.',
   },
 ]

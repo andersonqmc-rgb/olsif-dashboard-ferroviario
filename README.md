@@ -1,10 +1,12 @@
 ﻿# Dashboard Ferroviário OLSIF
 
-Versão 0.4.0 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
+Versão 0.4.1 do Dashboard Ferroviário do Observatório de Logística Sustentável e Inovação Ferroviária (OLSIF/UNIPAMPA).
 
 A v0.3 estrutura o **ICTF — Índice de Capilaridade Terminal Ferroviária** como hipótese metodológica conceitual. A v0.3.1 ajusta a página principal para apresentar primeiro o OLSIF e incorpora resultados preliminares do **MVP Territorial-Logístico v0.2**. A v0.3.2 consolida o estado atual e a linha do tempo com marcos de julho de 2026, incluindo o Projeto 5930 e o fechamento auditado da v0.3.1.
 
 A v0.4.0 cria o módulo interno **ANTT / Malha Sul** para acompanhar a frente da AP ANTT nº 11/2026, com prazo crítico, riscos, status de submissão, eixos de contribuição, matriz de argumentos aguardando validação, fontes ANTT e relações estratégicas.
+
+A v0.4.1 é um patch corretivo de governança, versionamento e estado da frente ANTT. Registra que a contribuição técnica foi submetida em 08/07/2026 e reposiciona o módulo para acompanhamento pós-submissão, sem informar número de protocolo.
 
 Esta versão também reorganiza o painel em abas/seções para reduzir a extensão visual da página e facilitar apresentações acadêmicas, extensionistas e institucionais.
 
@@ -13,6 +15,8 @@ Esta versão também reorganiza o painel em abas/seções para reduzir a extens�
 Os dados desta versão são **mockados, preliminares, simulados, placeholders metodológicos ou curados manualmente para prototipagem**. Eles não representam diagnóstico final, base oficial consolidada, índice calculado nem posição institucional definitiva.
 
 A finalidade é demonstrar uma arquitetura simples para observar, organizar, validar fontes, mapear cargas e gargalos, acompanhar frentes estratégicas e preparar decisões futuras. O uso é exploratório e interno ao desenvolvimento do projeto.
+
+Este repositório é **público**. Não devem ser incluídos protocolos, comprovantes, dados pessoais, senhas, tokens, documentos institucionais restritos ou conteúdo marcado como não indexável. Esses registros e demais evidências sensíveis permanecem no Google Drive autorizado.
 
 Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, **não avalia operadores** e **não produz decisão operacional**. As dimensões são perguntas de pesquisa para futura validação acadêmica, extensionista e institucional.
 
@@ -55,17 +59,24 @@ Na v0.3, o ICTF **não calcula pontuação real**, **não ranqueia terminais**, 
 - Disponibilidade e qualidade dos dados.
 - Governança, coordenação e operação.
 
-## Módulo ANTT / Malha Sul na v0.4.0
+## Módulo ANTT / Malha Sul na v0.4.1
 
-- Resumo da frente com placeholder `[TEXTO-COORDENACAO]` até validação textual pela coordenação.
-- Prazo crítico da AP ANTT nº 11/2026 em 10/08/2026, com semáforo calculado localmente.
-- Riscos da frente, com destaque para bloqueio técnico na plataforma ParticipANTT.
-- Status de submissão separado da confiabilidade dos dados; a etapa "Submetida" não deve aparecer sem confirmação explícita.
+- Contribuição técnica submetida em 08/07/2026, sem publicação de número de protocolo ou comprovantes.
+- Prazo da AP ANTT nº 11/2026 em 10/08/2026 preservado como referência, sem contagem regressiva após a submissão.
+- Acompanhamento pós-submissão, incluindo custódia dos comprovantes no Drive, identificação interna da versão protocolada, monitoramento dos desdobramentos e preparação de relatório interno.
+- Status de submissão separado da confiabilidade dos dados e das fontes acompanhadas.
 - Eixos preliminares de contribuição: capilaridade terminal, integração fronteiriça, cargas potenciais, interoperabilidade, sustentabilidade e dados públicos.
 - Matriz de argumentos pronta para receber apenas conteúdo validado no documento-fonte da contribuição.
 - Fontes ANTT em validação, com tipo, referência temporal, status e observação de uso.
 - Relações estratégicas com Corredor Mercosul / Lote C e Uruguaiana-Paso de los Libres.
 - Campo `visibility` nos dados do módulo, com valor inicial `interno`, preparando futura publicação controlada sem implementar filtro nesta versão.
+
+## Patch corretivo v0.4.1
+
+- Atualiza versão, rótulos e estado da frente ANTT sem criar funcionalidades.
+- Preserva a contribuição como manifestação individual e técnica no contexto do OLSIF, sem apresentá-la automaticamente como posição oficial da UNIPAMPA.
+- Reforça a separação entre o repositório público e protocolos, comprovantes ou documentos sensíveis mantidos no Google Drive.
+- Mantém o dashboard como protótipo interno, exploratório, demonstrativo e auditável; não é diagnóstico oficial, sistema público validado, plataforma regulatória ou gêmeo digital.
 
 ## Refinamentos da v0.4.0
 

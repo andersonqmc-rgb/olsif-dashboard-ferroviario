@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.4.1
+
+- Corrige o estado da frente ANTT/AP nº 11/2026 para pós-submissão e acompanhamento, com registro da submissão em 08/07/2026 sem número de protocolo.
+- Atualiza a versão corrente e os rótulos da interface para 0.4.1.
+- Reforça a governança do repositório público: protocolos, comprovantes, dados pessoais, tokens e documentos institucionais restritos permanecem fora do GitHub.
+- Preserva a distinção entre confiabilidade da informação e estágio do processo, com linguagem prudente sobre OLSIF e UNIPAMPA.
+- Não adiciona funcionalidades, dependências, APIs, backend, scraping ou banco de dados.
+
 ## v0.4.0
 
 - Adiciona módulo interno ANTT / Malha Sul como aba própria do dashboard.

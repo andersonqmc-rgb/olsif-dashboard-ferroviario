@@ -2,7 +2,7 @@
   return (
     <footer className="site-footer">
       <p>Observatório de Logística Sustentável e Inovação Ferroviária</p>
-      <p>Versão 0.3 · ICTF conceitual com dados preliminares e simulados.</p>
+      <p>Versão 0.4.1 · Protótipo exploratório com dados preliminares e simulados.</p>
     </footer>
   )
 }
